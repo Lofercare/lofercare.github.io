@@ -23,6 +23,8 @@ Everything else (reading, exporting, deleting)  ──►  you, in the Supabase 
 ## One-time setup
 
 1. In Supabase: **SQL Editor → New query**, paste `migrations/20261010000000_waitlist.sql`, **Run**.
+   (Already done for the live project. On 11 October 2026 its five functions, nine constraints and
+   row-level security were checked against this file and match exactly.)
 2. Find your **Project URL** (Project Settings → API), like `https://abcdxyz.supabase.co`.
 3. Locally: put it in `website/.env.local` as `VITE_SUPABASE_URL=…` (the publishable key is already there). Run `npm run dev` in `website/`.
 4. On GitHub: **Settings → Secrets and variables → Actions → Variables**, add `SUPABASE_URL` and `SUPABASE_PUBLISHABLE_KEY`.

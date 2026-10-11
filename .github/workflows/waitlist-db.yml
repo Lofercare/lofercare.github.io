@@ -1,0 +1,29 @@
+# Runs the waitlist database tests (supabase/) whenever the database recipe, its tests, or the
+# waitlist settings they share with the website change. They run the real migration in an
+# embedded Postgres; nothing here touches the live Supabase project.
+name: Waitlist database tests
+
+on:
+  push:
+    paths: ['supabase/**', 'website/src/waitlist/**', '.github/workflows/waitlist-db.yml']
+  pull_request:
+    paths: ['supabase/**', 'website/src/waitlist/**', '.github/workflows/waitlist-db.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: supabase/package-lock.json
+      - run: npm ci
+        working-directory: supabase
+      - run: npm test
+        working-directory: supabase

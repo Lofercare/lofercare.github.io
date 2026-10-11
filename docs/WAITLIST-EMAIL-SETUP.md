@@ -12,7 +12,7 @@ Supabase (the one source of truth)                         Brevo (sends the emai
            ┌──────────────────────────────────────────────┘
            ▼  every email has two links in its footer
   1. Brevo's own unsubscribe link   → Brevo blocklists them  ──► you copy these back to Supabase (step C1)
-  2. Our personal link               → https://YOUR-SITE/unsubscribe/#t=<code>
+  2. Our personal link               → https://lofercare.github.io/unsubscribe/#t=<code>
                                         "Unsubscribe from marketing" or "Leave the waitlist"
                                         → updates Supabase directly
 ```
@@ -24,8 +24,8 @@ records everything in Supabase. Step C1 keeps the two in step.
 ## A. One-time setup
 
 You'll need: **a domain you own for sending** (for example `lofer.co.uk`). Inbox providers and
-Brevo won't reliably deliver bulk email "from" a `@gmail.com` address. Also your website's
-address (below written as `YOUR-SITE`).
+Brevo won't reliably deliver bulk email "from" a `@gmail.com` address. The website is at
+`https://lofercare.github.io` (if it moves to your own domain later, update the link in step A8).
 
 1. **Apply the two database upgrades**, in order. Supabase → SQL Editor → New query → paste the
    whole file → Run:
@@ -33,7 +33,7 @@ address (below written as `YOUR-SITE`).
    2. `supabase/migrations/20261012000000_waitlist_email_links.sql`
 2. **Publish the website changes** (the `/unsubscribe/` page and the updated privacy policy): merge
    the `feature/waitlist-privacy` branch into `main`. GitHub deploys it.
-3. **Check the page works:** open `YOUR-SITE/unsubscribe/`. It should say "This link isn't complete"
+3. **Check the page works:** open `https://lofercare.github.io/unsubscribe/`. It should say "This link isn't complete"
    (that's correct: there's no personal code in the address).
 4. **Create the Brevo account** (the free plan is fine to start). Brevo's data processing agreement
    is part of its terms; download a copy for your records.
@@ -45,7 +45,7 @@ address (below written as `YOUR-SITE`).
    **`LOFER_LINK`**, type *Text*.
 8. **Make an email template** with this in the footer, next to Brevo's unsubscribe link:
    ```html
-   <a href="https://YOUR-SITE/unsubscribe/#t={{ contact.LOFER_LINK }}">Email preferences or leave the waitlist</a>
+   <a href="https://lofercare.github.io/unsubscribe/#t={{ contact.LOFER_LINK }}">Email preferences or leave the waitlist</a>
    ```
 9. **Retention (12 months after sign-up):** either run this on the 1st of every month,
    ```sql

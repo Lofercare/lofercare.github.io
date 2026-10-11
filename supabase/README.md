@@ -30,19 +30,34 @@ Everything else (reading, exporting, deleting)  ──►  you, in the Supabase 
 4. On GitHub: **Settings → Secrets and variables → Actions → Variables**, add `SUPABASE_URL` and `SUPABASE_PUBLISHABLE_KEY`.
 5. Check your project's region (Project Settings → General) and make sure section 8 of the privacy policy is true for it.
 
+## Upgrades (run each once, in order, in the SQL Editor)
+
+| File | What it does | Live project |
+|---|---|---|
+| `migrations/20261010000000_waitlist.sql` | The waitlist itself | Applied (checked 11 Oct 2026) |
+| `migrations/20261011000000_waitlist_withdrawals.sql` | Records marketing withdrawals (keeping the consent evidence) and adds the "do not email" list | **Not yet applied** |
+
+To apply one: **SQL Editor → New query**, paste the whole file, **Run**. It only adds things and
+changes one table rule; existing entries are kept (a test checks this).
+
 ## Day-to-day (run in the SQL Editor, as the owner)
+
+The rules and the step-by-step procedure for privacy requests are in
+`docs/WAITLIST-PRIVACY-OPERATIONS.md`. **No marketing email may be sent until unsubscribing works.**
 
 ```sql
 -- See the list
 select name, email, interest_category, price_range, marketing_consent, marketing_consent_timestamp, created_at
 from public.waitlist_entries order by created_at desc;
 
--- Only people who ticked the marketing box (the only people who may get marketing email)
-select name, email, marketing_consent_timestamp, marketing_consent_version
-from public.waitlist_entries where marketing_consent;
+-- THE list for any marketing email (opted in, not withdrawn, not on the "do not email" list)
+select * from public.marketing_audience();
 
--- Delete one person on request (email to loferprivacy@gmail.com; check it really is them first)
-delete from public.waitlist_entries where email_normalised = lower(btrim('person@example.com'));
+-- Someone unsubscribes from marketing (stays on the waitlist)
+select public.withdraw_marketing_consent('person@example.com');
+
+-- Someone leaves the waitlist / asks for deletion (email to loferprivacy@gmail.com; check it really is them first)
+select public.remove_from_waitlist('person@example.com');
 
 -- Retention: delete entries older than 12 months
 select public.purge_waitlist(interval '12 months');

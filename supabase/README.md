@@ -6,6 +6,8 @@ Instead the **database** guards itself:
 ```
 Browser (publishable key)  ──►  join_waitlist(name, email)          Step 1: saves the signup, returns a token
                            ──►  update_waitlist(token, answers…)    Step 2: needs that token
+                           ──►  unsubscribe_by_link(code)           /unsubscribe/: from a personal email link
+                           ──►  leave_waitlist_by_link(code)        /unsubscribe/: from a personal email link
 Everything else (reading, exporting, deleting)  ──►  you, in the Supabase dashboard
 ```
 
@@ -36,6 +38,7 @@ Everything else (reading, exporting, deleting)  ──►  you, in the Supabase 
 |---|---|---|
 | `migrations/20261010000000_waitlist.sql` | The waitlist itself | Applied (checked 11 Oct 2026) |
 | `migrations/20261011000000_waitlist_withdrawals.sql` | Records marketing withdrawals (keeping the consent evidence) and adds the "do not email" list | **Not yet applied** |
+| `migrations/20261012000000_waitlist_email_links.sql` | Personal links in emails (unsubscribe / leave the waitlist), list exports for Brevo, current policy version on new sign-ups, link clean-up in `purge_waitlist` | **Not yet applied** |
 
 To apply one: **SQL Editor → New query**, paste the whole file, **Run**. It only adds things and
 changes one table rule; existing entries are kept (a test checks this).
@@ -43,7 +46,9 @@ changes one table rule; existing entries are kept (a test checks this).
 ## Day-to-day (run in the SQL Editor, as the owner)
 
 The rules and the step-by-step procedure for privacy requests are in
-`docs/WAITLIST-PRIVACY-OPERATIONS.md`. **No marketing email may be sent until unsubscribing works.**
+`docs/WAITLIST-PRIVACY-OPERATIONS.md`, and how to send emails with Brevo (with working unsubscribe and
+"leave the waitlist" links) is in `docs/WAITLIST-EMAIL-SETUP.md`. **No marketing email may be sent until
+unsubscribing works.**
 
 ```sql
 -- See the list
@@ -59,7 +64,11 @@ select public.withdraw_marketing_consent('person@example.com');
 -- Someone leaves the waitlist / asks for deletion (email to loferprivacy@gmail.com; check it really is them first)
 select public.remove_from_waitlist('person@example.com');
 
--- Retention: delete entries older than 12 months
+-- Lists for Brevo, each person with a fresh personal link (see docs/WAITLIST-EMAIL-SETUP.md)
+select name, email, link_token from public.marketing_audience_with_links();   -- marketing
+select name, email, link_token from public.waitlist_contacts_with_links();    -- service emails to everyone
+
+-- Retention: delete entries 12 months after sign-up (also clears link codes older than 400 days)
 select public.purge_waitlist(interval '12 months');
 ```
 

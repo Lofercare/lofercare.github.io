@@ -18,3 +18,9 @@ export function emailError(value) {
   if (email.length > EMAIL_MAX || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) return 'Please enter a valid email address.';
   return '';
 }
+
+/** The personal code from an email link's "#t=…", or '' if it's missing or malformed. */
+export function linkToken(hash) {
+  const token = new URLSearchParams(String(hash ?? '').replace(/^#/, '')).get('t') ?? '';
+  return /^[0-9a-f]{64}$/.test(token) ? token : '';
+}

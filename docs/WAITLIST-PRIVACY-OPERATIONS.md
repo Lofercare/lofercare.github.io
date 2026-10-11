@@ -11,11 +11,13 @@ marketing (PECR) and on the right to erasure before relying on it.
 **Do not send any marketing email** (product news, updates, offers, anything promotional) until
 **all** of these are true:
 
-1. Every marketing email is sent through an email service that adds a **working one-click
-   unsubscribe link**, and clicking it actually runs `withdraw_marketing_consent` (or does the same).
-2. The recipient list comes **only** from `select * from public.marketing_audience();`, pulled
-   fresh right before sending. Never from an old export, a spreadsheet or a personal address book.
-3. The privacy policy describes the email service and the unsubscribe process accurately.
+1. Every marketing email is sent through **Brevo**, with Brevo's unsubscribe link **and** our
+   personal email-preferences link, and both have been tested end to end
+   (`WAITLIST-EMAIL-SETUP.md`, section B).
+2. Brevo's unsubscribes are copied back to Supabase before every send (section C1 there).
+3. The recipient list comes **only** from `marketing_audience_with_links()`, exported fresh right
+   before sending. Never from an old export, a spreadsheet or a personal address book.
+4. The live privacy policy describes Brevo and the unsubscribe process (the 11 October 2026 version).
 
 **Never** send marketing from a personal inbox (Gmail, etc.): there's no unsubscribe link, and
 it would break both our privacy policy and the PECR rules.
@@ -26,7 +28,8 @@ If in doubt, treat it as marketing.
 
 ## Rule 2: privacy requests by email
 
-Requests arrive at **loferprivacy@gmail.com**. Both founders have access.
+Most people will use the personal link in our emails (it updates Supabase directly, nothing for us
+to do). Other requests arrive at **loferprivacy@gmail.com**. Both founders have access.
 
 | What | Our target | Legal limit (UK GDPR) |
 |---|---|---|

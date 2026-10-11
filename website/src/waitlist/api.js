@@ -1,5 +1,6 @@
 // Talks to the waitlist database functions in Supabase (see supabase/README.md).
-// Only the PUBLISHABLE key is used here. It can call exactly two functions and nothing else.
+// Only the PUBLISHABLE key is used here. It can call exactly four functions and nothing else:
+// the two sign-up steps, and the two personal-link actions on the email-preferences page.
 import { SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY, CONSENT_VERSION } from './config.js';
 
 /** An error the screens know how to explain. `code` is one of the names below. */
@@ -11,7 +12,7 @@ export class WaitlistError extends Error {
 }
 
 // Codes the database sends back (see the migration), passed through as they are.
-const KNOWN_CODES = ['invalid_email', 'invalid_name', 'rate_limited', 'invalid_token', 'invalid_answer', 'invalid_consent_version'];
+const KNOWN_CODES = ['invalid_email', 'invalid_name', 'rate_limited', 'invalid_token', 'invalid_answer', 'invalid_consent_version', 'invalid_link'];
 
 async function call(fn, body, timeoutMs = 20000) {
   if (!SUPABASE_URL || !SUPABASE_PUBLISHABLE_KEY) throw new WaitlistError('unavailable');
@@ -58,5 +59,17 @@ export async function updateWaitlist({ token, interest, price, consent }) {
     p_consent: Boolean(consent),
     p_consent_version: CONSENT_VERSION,
   });
+  if (!result?.ok) throw new WaitlistError('server');
+}
+
+/** From a personal email link: stop marketing emails (stays on the waitlist). */
+export async function unsubscribeByLink(token) {
+  const result = await call('unsubscribe_by_link', { p_token: token });
+  if (!result?.ok) throw new WaitlistError('server');
+}
+
+/** From a personal email link: leave the waitlist (deletes the entry). */
+export async function leaveWaitlistByLink(token) {
+  const result = await call('leave_waitlist_by_link', { p_token: token });
   if (!result?.ok) throw new WaitlistError('server');
 }

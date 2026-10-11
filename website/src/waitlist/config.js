@@ -1,7 +1,7 @@
 // Settings and wording for the waitlist. Plain data, so tests can read it too.
 
 // Where the waitlist database lives. Both values are PUBLIC by design (the publishable key can
-// only call the three waitlist functions; see supabase/README.md). They come from the build
+// only call the four waitlist functions; see supabase/README.md). They come from the build
 // environment: website/.env.local on your machine, repository variables on GitHub.
 export const SUPABASE_URL = (import.meta.env?.VITE_SUPABASE_URL ?? '').replace(/\/+$/, '');
 export const SUPABASE_PUBLISHABLE_KEY = import.meta.env?.VITE_SUPABASE_PUBLISHABLE_KEY ?? '';

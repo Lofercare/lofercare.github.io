@@ -85,6 +85,7 @@ test('5. leaving the waitlist deletes the entry and keeps only the hash', async 
 
 test('6. a suppression after someone consents always wins; a fresh tick after it counts again', async () => {
   // Removed earlier (test 5), then signs up again and freshly ticks the box: new, explicit consent.
+  await new Promise((resolve) => setTimeout(resolve, 15));   // never the same instant in real life
   const { token } = await join('Leaver Again', 'leaver@example.com');
   await answer(token, true);
   assert.ok((await audience()).includes('leaver@example.com'), 'fresh consent after the suppression');

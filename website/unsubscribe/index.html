@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Email preferences · Lofer</title>
+    <meta name="description" content="Unsubscribe from Lofer's marketing emails, or leave the waitlist." />
+    <!-- Personal links lead here: never list this page in search engines. -->
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="referrer" content="no-referrer" />
+    <meta name="theme-color" content="#f3ebe2" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  </head>
+  <body>
+    <header class="nav">
+      <a class="nav__brand" href="../" aria-label="Lofer home">
+        <span class="nav__mark" data-logo-mark></span>
+        <span class="wordmark">Lofer</span>
+      </a>
+      <a class="button button--small" href="../">Back to Lofer</a>
+    </header>
+
+    <main class="legal prefs" id="top">
+      <h1>Email preferences</h1>
+
+      <!-- Shown when the link from the email is incomplete or missing. -->
+      <section data-prefs="nolink" hidden>
+        <p>This link isn't complete. Please open the whole link from your email again, or write to
+          <a href="mailto:loferprivacy@gmail.com">loferprivacy@gmail.com</a> and we'll do it for you.</p>
+      </section>
+
+      <!-- The choice. Nothing happens until a button is pressed. -->
+      <section data-prefs="choose" hidden>
+        <p class="prefs__lede">What would you like to do?</p>
+        <div class="prefs__option">
+          <h2>Stop marketing emails</h2>
+          <p>No more product news, updates or offers. You stay on the waitlist, and we'll still tell you when early access opens.</p>
+          <button class="button" type="button" data-prefs-action="unsubscribe">Unsubscribe from marketing</button>
+        </div>
+        <div class="prefs__option">
+          <h2>Leave the waitlist</h2>
+          <p>We'll delete your name, email address and answers, and won't email you again.</p>
+          <button class="button button--quiet" type="button" data-prefs-action="leave-ask">Leave the waitlist</button>
+        </div>
+      </section>
+
+      <!-- Leaving deletes data, so it asks once more. -->
+      <section data-prefs="confirm" hidden>
+        <p class="prefs__lede">Delete your details and leave the waitlist?</p>
+        <p>This can't be undone. You're welcome to sign up again later.</p>
+        <div class="prefs__actions">
+          <button class="button" type="button" data-prefs-action="leave">Yes, delete my details</button>
+          <button class="prefs__cancel" type="button" data-prefs-action="back">Go back</button>
+        </div>
+      </section>
+
+      <section data-prefs="done-unsubscribe" hidden>
+        <p class="prefs__lede">You're unsubscribed.</p>
+        <p>You won't receive marketing emails from Lofer. You're still on the waitlist. If you'd like to leave it too, use the link in any of our emails, or write to
+          <a href="mailto:loferprivacy@gmail.com">loferprivacy@gmail.com</a>.</p>
+      </section>
+
+      <section data-prefs="done-leave" hidden>
+        <p class="prefs__lede">You've left the waitlist.</p>
+        <p>Your details have been deleted, and we won't email you again. We keep only a scrambled code of your address so that it stays that way (see our <a href="../privacy/">Privacy Policy</a>).</p>
+      </section>
+
+      <p class="wl__error prefs__error" role="alert" data-prefs-error hidden></p>
+      <p class="prefs__note">Questions? <a href="mailto:loferprivacy@gmail.com">loferprivacy@gmail.com</a> · <a href="../privacy/">Privacy Policy</a></p>
+    </main>
+
+    <footer class="footer">
+      <span class="wordmark footer__word">Lofer</span>
+      <p>Lofer is in development. © <span data-year></span> Lofer · <a href="../privacy/">Privacy Policy</a></p>
+    </footer>
+
+    <script type="module" src="/src/unsubscribe.js"></script>
+  </body>
+</html>

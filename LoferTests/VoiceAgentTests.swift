@@ -17,20 +17,6 @@ final class VoiceAgentTests: XCTestCase {
         XCTAssertEqual(spy.spoken.last, "Show me where it's bothering you.", "Everything Lofer says goes through the protocol")
     }
 
-    func testAppRunsWithTheElevenLabsPlaceholder() async {
-        let placeholder = ElevenLabsVoiceAgent(tokenEndpoint: URL(string: "https://example.invalid/voice-token")!)
-        let app = AppModel(voice: placeholder)
-        app.micTapped()
-        XCTAssertEqual(placeholder.state, .error, "Speech isn't configured yet, and says so")
-        app.closeInput()
-
-        var heard: [String] = []
-        let original = placeholder.onTranscript
-        placeholder.onTranscript = { text, final in heard.append(text); original?(text, final) }
-        app.submitTyped("My right shoulder is tight.")
-        XCTAssertEqual(heard, ["My right shoulder is tight."], "Typed text still works without a speech service")
-    }
-
     // MARK: - The mock's behaviour, through the protocol
 
     func testSubmittedTextArrivesAsAFinalTranscript() {

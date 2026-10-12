@@ -295,6 +295,14 @@ final class CareFlowModel {
             return answerObservation(e, value)
         }
         var learned = AssessmentService.update(&A, with: r, expect: expect)
+        // A question Care Intelligence phrased itself (a field the app has no special handling for):
+        // the reply answers it, and is kept as evidence.
+        if let e = expect, !["story", "safety", "sensation", "triggers", "onset", "severity", "previous"].contains(e),
+           !e.hasPrefix("observation:"), A.answers[e] == nil, !r.raw.trimmingCharacters(in: .whitespaces).isEmpty {
+            A.answers[e] = r.unsure ? .uncertain : r.skip ? .skipped : .affirmative
+            learned.append("answered:\(e)")
+            investigation.addEvidence(.userReport, "\(question?.text ?? e) → “\(r.raw)”", field: e, value: r.raw)
+        }
         recordReport(r.raw, learned: learned)
         // Only a reply that addresses the question counts as answering it.
         if let e = expect, learned.contains("answered:\(e)") {

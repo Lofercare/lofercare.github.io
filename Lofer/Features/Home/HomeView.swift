@@ -29,7 +29,8 @@ struct HomeView: View {
             VoiceOrb(state: app.voice.state, size: 300)
                 .onTapGesture { app.micTapped() }
                 .accessibilityAddTraits(.isButton)
-            Text(app.homeHeard).font(LoferFont.ui(14.5)).foregroundStyle(Color.loferMuted).multilineTextAlignment(.center)
+            // What was heard, or why voice isn't working (typing always still works).
+            Text(app.voice.problem?.message ?? app.homeHeard).font(LoferFont.ui(14.5)).foregroundStyle(Color.loferMuted).multilineTextAlignment(.center)
                 .padding(.horizontal, 28).frame(minHeight: 22)
             HStack(spacing: 10) {
                 Button { app.micTapped() } label: {

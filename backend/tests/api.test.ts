@@ -23,7 +23,7 @@ async function serve(provider: CareIntelligenceProvider) {
 test('health reports the provider', async () => {
   const call = await serve(new MockCareIntelligenceProvider());
   const res = await call('/api/health');
-  assert.deepEqual(await res.json(), { ok: true, provider: 'mock', schemaVersion: 1 });
+  assert.deepEqual(await res.json(), { ok: true, provider: 'mock', voice: 'off', schemaVersion: 1 });
 });
 
 test('a valid request gets a schema-valid structured response', async () => {
@@ -64,5 +64,5 @@ test('providers are swappable behind the same interface', async () => {
   const res = await (await serve(future))('/api/care', request({ text: TENNIS }));
   assert.equal(res.status, 200);
   assert.equal((await res.json()).provider, 'future-llm');
-  assert.throws(() => createProvider('anthropic'), /isn't implemented yet/, 'no real provider until approved');
+  assert.throws(() => createProvider('anthropic'), /isn't implemented/, 'only configured providers exist');
 });

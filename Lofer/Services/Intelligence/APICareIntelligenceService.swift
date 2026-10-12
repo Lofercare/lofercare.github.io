@@ -9,12 +9,15 @@ import Foundation
 /// Choose with launch arguments (Xcode: Product › Scheme › Edit Scheme › Arguments):
 ///   -LoferIntelligence local|backend      (default: backend in Debug builds, local otherwise)
 ///   -LoferBackendURL http://127.0.0.1:8787
+///   -LoferClientKey …   (or LOFER_CLIENT_KEY) when the backend requires one. Set it only in your
+///                       local scheme (Edit Scheme › Run › Environment Variables); never commit it.
 /// If the backend can't be reached, CareFlowModel falls back to the on-device service.
 struct CareIntelligenceConfig: Equatable {
     enum Mode: String { case local, backend }
     var mode: Mode
     var backendURL: URL
-    var timeout: TimeInterval = 8
+    var timeout: TimeInterval = 25        // an LLM turn takes a few seconds; after this the app falls back on-device
+    var clientKey: String? = nil          // sent as "Authorization: Bearer …" to the backend
 
     static let defaultBackendURL = URL(string: "http://127.0.0.1:8787")!
 
@@ -31,11 +34,12 @@ struct CareIntelligenceConfig: Equatable {
         #endif
         let mode = value("LoferIntelligence").flatMap(Mode.init(rawValue:)) ?? fallbackMode
         let url = value("LoferBackendURL").flatMap(URL.init(string:)) ?? defaultBackendURL
-        return .init(mode: mode, backendURL: url)
+        let key = value("LoferClientKey") ?? env["LOFER_CLIENT_KEY"]
+        return .init(mode: mode, backendURL: url, clientKey: key.flatMap { $0.isEmpty ? nil : $0 })
     }
 
     func makeService() -> CareIntelligenceService {
-        mode == .backend ? APICareIntelligenceService(baseURL: backendURL, timeout: timeout) : LocalCareIntelligenceService()
+        mode == .backend ? APICareIntelligenceService(baseURL: backendURL, timeout: timeout, clientKey: clientKey) : LocalCareIntelligenceService()
     }
 }
 
@@ -51,13 +55,15 @@ enum CareIntelligenceError: Error, Equatable {
 /// Talks to Lofer's backend. Networking only: no care logic lives here.
 struct APICareIntelligenceService: CareIntelligenceService {
     var baseURL: URL
-    var timeout: TimeInterval = 8
+    var timeout: TimeInterval = 25
+    var clientKey: String? = nil
     var session: URLSession = .shared
 
     func respond(to request: CareRequest) async throws -> CareIntelligenceResponse {
         var http = URLRequest(url: baseURL.appendingPathComponent("api/care"), timeoutInterval: timeout)
         http.httpMethod = "POST"
         http.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        if let clientKey { http.setValue("Bearer \(clientKey)", forHTTPHeaderField: "Authorization") }
         http.httpBody = try CareSchema.encoder().encode(request)
 
         let data: Data, response: URLResponse

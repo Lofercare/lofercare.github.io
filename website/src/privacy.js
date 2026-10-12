@@ -1,4 +1,5 @@
 // The privacy page: no 3D, no tiling, no motion. It reuses the site's styles and logo.
+import './fonts.js';
 import './styles.css';
 import { logoMarkSvg } from './logo.js';
 import { initI18n } from './i18n/i18n.js';

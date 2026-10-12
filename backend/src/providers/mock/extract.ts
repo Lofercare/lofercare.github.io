@@ -7,7 +7,7 @@ type Entry = { regionId?: string; template?: string; noun?: string };
 const O = '(?:my |the |your )?(?:left |right )?';
 
 /** Body-area phrases → atlas ids or side templates ("{s}" = r/l). First match wins. */
-const PARTS: Array<[string, Entry]> = [
+export const PARTS: Array<[string, Entry]> = [
   [`front of ${O}neck|throat`, { regionId: 'neck_f' }],
   [`side of ${O}neck`, { template: '{s}_neckside', noun: 'neck' }],
   [`back of ${O}neck|\\bneck\\b`, { regionId: 'neck_b' }],
@@ -48,7 +48,7 @@ const ACTIVITIES: Array<[string, string]> = [
   ['\\bgym\\b|workout|training', 'training'], ['sitting|desk|laptop|computer', 'sitting'], ['working|at work|long day', 'work'],
   ['slept|sleeping', 'sleeping'], ['cycling|\\bbike\\b', 'cycling'], ['golf', 'golf'], ['football|soccer|basketball|rugby', 'team sport'],
 ];
-const TRIGGERS: Array<[string, string]> = [
+export const TRIGGERS: Array<[string, string]> = [
   ['(above|over) my head|overhead|reach(ing)? up', 'Raising the arm overhead'], ['(lift|raise|raising|lifting) (my |the )?arm(?! (above|over))', 'Lifting the arm'],
   ['reach(ing)? (back|behind|backwards)|behind my back', 'Reaching backwards'], ['rotat(e|ing)|twist(ing)?', 'Rotating'],
   ['turn(ing)? my head|look(ing)? over my shoulder', 'Turning the head'], ['bend(ing)? (over|down|forward)|bending', 'Bending forward'],
@@ -56,7 +56,7 @@ const TRIGGERS: Array<[string, string]> = [
   ['grip|gripping', 'Gripping'], ['squat|kneel', 'Squatting or kneeling'], ['serv(e|ing)|throw', 'Overhead throwing or serving'],
 ];
 /** Warning signs: urgent = urgent help now; stop = see a professional first; caution = be conservative. */
-const FLAGS: Array<[WarningSign['level'], string, string]> = [
+export const FLAGS: Array<[WarningSign['level'], string, string]> = [
   ['urgent', 'chest pain|pain in (my )?chest|short(ness)? of breath|can\'?t breathe|fainted|passed out|slurred', 'Chest symptoms or breathing difficulty'],
   ['urgent', 'worst headache|sudden severe headache|thunderclap', 'Sudden severe headache'],
   ['urgent', '(lost|losing|loss of) (control of )?(my )?(bladder|bowel)', 'Bladder, bowel or saddle numbness'],

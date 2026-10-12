@@ -17,7 +17,7 @@ import type {
 import { extract } from './extract.ts';
 
 // Movement checks the app has content for (ids match Lofer/Models/MovementTest.swift).
-const MOVEMENTS: Array<{ id: string; matches: RegExp; name: string; prompt: string; release: string }> = [
+export const MOVEMENTS: Array<{ id: string; matches: RegExp; name: string; prompt: string; release: string }> = [
   { id: 'arm_raise', matches: /_sh_|shoulder|_ua_|uarm|_trap|_scap|chest|_lat/, name: 'arm raise', prompt: "Let's see how lifting your arm feels.", release: 'lowered your arm' },
   { id: 'head_turn', matches: /neck|backhead|headneck/, name: 'head turn', prompt: "Let's see how turning your head feels.", release: 'came back to the middle' },
   { id: 'forward_reach', matches: /lowerback|lowback|_glute|_hip|hips|mid_back|upperback/, name: 'forward reach', prompt: "Let's see how a gentle reach forward feels.", release: 'rolled back up' },

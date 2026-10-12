@@ -3,15 +3,19 @@
   "private": true,
   "version": "0.1.0",
   "type": "module",
-  "description": "Lofer's backend: Care Intelligence behind POST /api/care. Phase 2-3 runs a mock provider (no LLM, no API keys).",
-  "engines": { "node": ">=23.6" },
+  "description": "Lofer's backend: Care Intelligence behind POST /api/care, and ElevenLabs speech (single-use tokens + text-to-speech) behind /api/voice.",
+  "engines": {
+    "node": ">=23.6"
+  },
   "scripts": {
-    "start": "node src/server.ts",
-    "dev": "node --watch src/server.ts",
+    "start": "node --env-file-if-exists=.env src/server.ts",
+    "dev": "node --env-file-if-exists=.env --watch src/server.ts",
+    "smoke": "node --env-file-if-exists=.env scripts/smoke.ts",
     "test": "NODE_ENV=test node --test tests/*.test.ts",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "openai": "^7.30.0",
     "zod": "^4.6.5"
   },
   "devDependencies": {

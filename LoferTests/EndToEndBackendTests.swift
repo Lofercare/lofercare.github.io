@@ -10,14 +10,19 @@ import Observation
 @MainActor
 final class EndToEndBackendTests: XCTestCase {
     static let backend = URL(string: ProcessInfo.processInfo.environment["LOFER_BACKEND_URL"] ?? "http://127.0.0.1:8787")!
+    /// The backend's LOFER_CLIENT_KEY, when it requires one. Pass it to `xcodebuild test` as
+    /// TEST_RUNNER_LOFER_CLIENT_KEY=… (xcodebuild hands TEST_RUNNER_ variables to the tests).
+    static let clientKey = ProcessInfo.processInfo.environment["LOFER_CLIENT_KEY"]
 
+    /// The mock provider's exact script (deterministic, so every step is checked).
     func testTennisSessionThroughTheLocalBackend() async throws {
-        try await skipUnlessBackendIsUp()
+        let provider = try await skipUnlessBackendIsUp()
+        try XCTSkipUnless(provider == "mock", "This scripted test is for the mock provider (running: \(provider))")
         let voice = TranscriptVoice()
         let memory = BodyMemoryStore(defaults: UserDefaults(suiteName: "lofer.e2e.\(UUID().uuidString)")!)
         memory.clear()
         let device = MockLoferDevice()
-        let m = CareFlowModel(memory: memory, intelligence: APICareIntelligenceService(baseURL: Self.backend),
+        let m = CareFlowModel(memory: memory, intelligence: APICareIntelligenceService(baseURL: Self.backend, clientKey: Self.clientKey),
                               device: device, voice: voice, body: BodySceneController())
         m.reset()
         var log: [String] = []
@@ -93,11 +98,78 @@ final class EndToEndBackendTests: XCTestCase {
         if let path = ProcessInfo.processInfo.environment["LOFER_E2E_LOG"] { try? transcript.write(toFile: path, atomically: true, encoding: .utf8) }
     }
 
-    private func skipUnlessBackendIsUp() async throws {
+    /// Any provider (mock or a real LLM): answer whatever Lofer asks, like a user would, and check
+    /// the whole loop holds: no fallbacks, no diagnosis, safety and Body Memory intact.
+    func testAdaptiveSessionWithAnyProvider() async throws {
+        let provider = try await skipUnlessBackendIsUp()
+        let voice = TranscriptVoice()
+        let memory = BodyMemoryStore(defaults: UserDefaults(suiteName: "lofer.e2e.\(UUID().uuidString)")!)
+        memory.clear()
+        let device = MockLoferDevice()
+        let m = CareFlowModel(memory: memory, intelligence: APICareIntelligenceService(baseURL: Self.backend, clientKey: Self.clientKey),
+                              device: device, voice: voice, body: BodySceneController())
+        m.reset()
+        var log: [String] = []
+        var clock = Date()
+        func lofer() { log.append(String(format: "LOFER (%.1fs): %@   [%@]", Date().timeIntervalSince(clock), voice.spoken.last ?? "", m.step.rawValue)); clock = Date() }
+        func user(_ t: String) { log.append("USER: \(t)"); clock = Date() }
+
+        let story = InvestigationTests.tennis
+        user(story); await m.beginWithStory(story); lofer()
+        var turns = 0
+        while ![.confirm, .suggest, .stop].contains(m.step) && turns < 10 {
+            turns += 1
+            switch m.step {
+            case .locate where m.pendingSide != nil:
+                user("(taps Right)"); m.chooseSide(.right)
+            case .locate:
+                let id = m.A.bodyRegion ?? "r_sh_back"
+                user("(confirms \(BodyAtlas.shared[id].label) on the body)"); m.confirmArea(id)
+            case .movement:
+                user("It starts pulling about halfway."); await m.hear("It starts pulling about halfway.")
+            case .clarify:
+                let q = m.question
+                if q?.field == "safety" { user("(taps None of these)"); m.answerSafety([]) }
+                else if let o = q?.options.first(where: { $0.1 == "eased" }) ?? q?.options.first { user("(taps \(o.0))"); m.answerChip(q!.field, o.1) }
+                else { user("It's mostly fine when I'm resting."); await m.hear("It's mostly fine when I'm resting.") }
+            default:
+                user("Yes."); await m.hear("Yes.")
+            }
+            await m.settle(); lofer()
+        }
+        XCTAssertLessThan(turns, 10, "Investigation should finish within its budget")
+        if m.step == .confirm { user("Yes, that's right."); await m.hear("Yes, that's right."); lofer() }
+        if m.step == .suggest {
+            log.append("PLAN: \(m.validated?.plan.name ?? "") — \(m.validated?.plan.sequenceText ?? "") (SafetyValidator: \(m.tri?.level.rawValue ?? ""))")
+            m.startTreatment()
+            XCTAssertTrue(device.isRunning)
+            m.reading = device.tick(seconds: 300); m.endRun(); lofer()
+            if m.step == .movement { user("It feels easier now."); await m.hear("It feels easier now."); lofer() }
+            if m.step == .reassess { user("It feels a little better."); m.reassess("little"); lofer() }
+        }
+        let e = try XCTUnwrap(memory.all.first, "The session is saved")
+        let inv = try XCTUnwrap(e.investigation)
+        log.append("MEMORY: checks: " + inv.checks.map { "\($0.kind.rawValue)=\($0.response ?? $0.status.rawValue)" }.joined(separator: " · "))
+        log.append("MEMORY: patterns: " + inv.patterns.map { "\($0.label) (\($0.status.rawValue))" }.joined(separator: "; "))
+        log.append("MEMORY: outcome: \(e.outcome.response ?? "–") → \(e.outcome.pathway); answered by: \(Set(inv.intelligenceSources).sorted().joined(separator: ", "))")
+
+        XCTAssertTrue(inv.intelligenceSources.contains(provider), "The backend's \(provider) provider answered")
+        XCTAssertFalse(inv.intelligenceSources.contains("local (fallback)"), "No turn fell back: \(m.intelligenceNote ?? "")")
+        for line in voice.spoken { XCTAssertFalse(line.has("diagnos|\\btear\\b|tendin|impingement|root cause"), "No diagnosis: \(line)") }
+        let transcript = "===== LOFER SESSION (provider: \(provider)) =====\n" + log.joined(separator: "\n") + "\n"
+        print(transcript)
+        if let path = ProcessInfo.processInfo.environment["LOFER_E2E_LOG"] { try? transcript.write(toFile: path + ".adaptive.txt", atomically: true, encoding: .utf8) }
+    }
+
+    /// Skips unless the backend answers; returns which provider it runs.
+    @discardableResult
+    private func skipUnlessBackendIsUp() async throws -> String {
         var req = URLRequest(url: Self.backend.appendingPathComponent("api/health"), timeoutInterval: 2)
         req.httpMethod = "GET"
-        let ok = (try? await URLSession.shared.data(for: req)).map { ($0.1 as? HTTPURLResponse)?.statusCode == 200 } ?? false
-        try XCTSkipUnless(ok, "Lofer backend not running at \(Self.backend) (cd backend && npm start)")
+        let data = try? await URLSession.shared.data(for: req)
+        let provider = data.flatMap { (try? JSONSerialization.jsonObject(with: $0.0)) as? [String: Any] }?["provider"] as? String
+        try XCTSkipUnless(provider != nil, "Lofer backend not running at \(Self.backend) (cd backend && npm start)")
+        return provider!
     }
 }
 

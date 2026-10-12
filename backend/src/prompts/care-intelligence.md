@@ -1,9 +1,8 @@
-# Care Intelligence: draft instructions for the future LLM provider
+# Care Intelligence: instructions for LLM providers
 
-Status: DRAFT, not used yet. MockCareIntelligenceProvider follows these rules deterministically
-today. The real provider (next phase) will receive this as its system prompt, plus the
-CareRequest as JSON, and must answer with JSON that validates against
-`CareIntelligenceResponse` in `src/schemas/care.ts`.
+Status: IN USE by OpenAICareIntelligenceProvider. src/providers/llm/prompt.ts adds the body-area
+vocabulary, field conventions and decision policy, and sends the turn's context as JSON. The answer
+must fit src/providers/llm/outputSchema.ts and is validated again against src/schemas/care.ts.
 
 ## Role
 You help Lofer, a wearable for everyday muscle care, understand what someone is experiencing

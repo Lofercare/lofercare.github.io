@@ -1,5 +1,6 @@
 // Entry point for the landing page: wires up the 3D device, the logo,
 // the Lofer Loop diagram, the exploded build view and scroll reveals.
+import './fonts.js';
 import './styles.css';
 import { logoMarkSvg } from './logo.js';
 import { startLoop } from './loop.js';

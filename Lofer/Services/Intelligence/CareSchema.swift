@@ -143,7 +143,13 @@ extension ParsedUtterance {
         guard let response else { return local }
         var r = local
         let x = response.extractedInformation, u = response.assessmentUpdates
-        if let m = x.bodyMention, m.regionId != nil || m.template != nil { r.entry = .init(id: m.regionId, template: m.template, noun: m.noun) }
+        // Only body areas the app's atlas knows (an LLM could invent an id). Unknown ones are ignored.
+        if let m = x.bodyMention {
+            let atlas = BodyAtlas.shared
+            let id = m.regionId.flatMap { atlas.node($0) != nil ? $0 : nil }
+            let template = m.template.flatMap { t in atlas.node(t.replacingOccurrences(of: "{s}", with: "r")) != nil ? t : nil }
+            if id != nil || template != nil { r.entry = .init(id: id, template: template, noun: m.noun) }
+        }
         if let s = x.side { r.side = s == "left" ? .left : s == "right" ? .right : r.side }
         if x.bilateral == true { r.bilateral = true }
         if let v = u.sensation, AssessmentPatch.sensations.contains(v) { r.type = v }

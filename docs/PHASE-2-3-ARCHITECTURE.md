@@ -18,8 +18,8 @@ CareIntelligenceService ──► APICareIntelligenceService ──HTTP──►
   │   (falls back to LocalCareIntelligenceService on any failure)      │ zod-validated in/out
   │                                                                    ▼
   │                                                     CareIntelligenceProvider
-  │                                                     └─ MockCareIntelligenceProvider (now)
-  │                                                     └─ real LLM provider (next phase)
+  │                                                     ├─ OpenAICareIntelligenceProvider (gpt-5.4-mini)
+  │                                                     └─ MockCareIntelligenceProvider (tests, no key)
   ▼  CareIntelligenceResponse: extracted info, assessment updates, possible contributing
   │  patterns, uncertainties, evidence, PROPOSED next action, readiness, wording
   ▼

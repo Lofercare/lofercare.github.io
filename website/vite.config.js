@@ -6,7 +6,7 @@ import { resolve } from 'node:path';
 // Two pages: the landing page, and the privacy policy at /privacy/ (a folder with its own index.html,
 // so the address works when typed in or refreshed, with no server rules).
 export default defineConfig(({ command }) => ({
-  base: command === 'build' ? '/lofer/' : '/',
+  base: '/',
   build: {
     rollupOptions: {
       input: {

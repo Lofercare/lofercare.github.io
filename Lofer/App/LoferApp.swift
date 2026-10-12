@@ -4,7 +4,8 @@ import SwiftUI
 /// (services + navigation) is created, and RootView decides which screen to show.
 @main
 struct LoferApp: App {
-    @State private var app = AppModel()
+    // Voice provider from the launch arguments: the mock by default, -LoferVoice elevenlabs for real speech.
+    @State private var app = AppModel(voice: VoiceConfig.fromLaunchArguments().makeAgent())
     init() { LoferFont.registerBundledFonts() }
     var body: some Scene {
         WindowGroup {

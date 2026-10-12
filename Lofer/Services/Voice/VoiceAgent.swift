@@ -10,14 +10,22 @@ enum VoiceState: String { case idle = "IDLE", listening = "LISTENING", thinking 
 /// structured intents for the engine and safety layer.
 ///
 ///   VoiceAgent
-///   ├── MockVoiceAgent          ← now: typed / sample text stands in for speech
-///   └── ElevenLabsVoiceAgent    ← later: streaming speech via Lofer's backend (no keys in the app)
+///   ├── MockVoiceAgent          ← typed / sample text stands in for speech (default)
+///   └── ElevenLabsVoiceAgent    ← real speech: ElevenLabs speech-to-text + text-to-speech via
+///                                  Lofer's backend (no keys in the app). See ElevenLabsVoiceAgent.swift.
 ///
 /// The app (AppModel, CareFlowModel) only ever talks to this protocol, so providers are
-/// interchangeable: swap the one line in AppModel and nothing else changes.
-/// Providers must be `Observable` so screens update when `state` changes.
+/// interchangeable: VoiceConfig picks one at launch (-LoferVoice mock|elevenlabs) and nothing
+/// else changes. Providers must be `Observable` so screens update when `state` changes.
+/// Everything runs on the main actor, like the screens and the care flow that use it.
+@MainActor
 protocol VoiceAgent: AnyObject, Observable {
     var state: VoiceState { get }
+    /// True when the provider listens through the microphone. False for the mock, where a
+    /// text field stands in for speech.
+    var usesMicrophone: Bool { get }
+    /// Why voice isn't working right now (e.g. microphone access denied), for the screen to show.
+    var problem: VoiceProblem? { get }
     /// Called with what was heard: (text, isFinal). Partial results may arrive first.
     var onTranscript: ((String, Bool) -> Void)? { get set }
     func startListening()
@@ -32,6 +40,32 @@ protocol VoiceAgent: AnyObject, Observable {
     /// The app has finished handling the last transcript. If Lofer isn't saying anything,
     /// the provider goes back from "thinking" to idle.
     func transcriptHandled()
+}
+
+extension VoiceAgent {
+    var usesMicrophone: Bool { false }
+    var problem: VoiceProblem? { nil }
+}
+
+/// Why voice can't be used right now. Typing always still works.
+enum VoiceProblem: Error, Equatable {
+    case microphoneDenied        // the user said no to microphone access (Settings › Lofer to change)
+    case microphoneUnavailable   // no microphone input (e.g. in use by a call)
+    case notConfigured           // the backend refused the app (missing or wrong client key)
+    case unavailable             // the backend or the speech service can't be reached
+    case connectionLost          // the live transcription connection dropped
+
+    /// Short enough for the label under the voice orb.
+    var message: String {
+        switch self {
+        case .microphoneDenied: "Microphone is off for Lofer. Type instead, or allow it in Settings."
+        case .microphoneUnavailable: "The microphone isn't available right now. Type instead."
+        case .notConfigured: "Voice isn't set up on this build. Type instead."
+        case .unavailable, .connectionLost: "Voice isn't reachable right now. Type instead, or tap to retry."
+        }
+    }
+    /// For the small label next to the orb during care.
+    var shortLabel: String { self == .microphoneDenied ? "Mic off · type instead" : "Voice unavailable" }
 }
 
 /// How submitted text is presented while it's delivered.
@@ -92,30 +126,5 @@ final class MockVoiceAgent: VoiceAgent {
         }
     }
     func interrupt() { speakTask?.cancel(); state = .interrupted; Task { @MainActor in try? await Task.sleep(for: .milliseconds(300)); if state == .interrupted { state = .idle } } }
-    func transcriptHandled() { if state == .thinking { state = .idle } }
-}
-
-/// Placeholder, NOT integrated. A real provider must get a short-lived session token from
-/// Lofer's backend. API keys never ship in the app or the repository.
-/// It already conforms fully, so it can be swapped in for the mock: speech isn't available
-/// yet (listening reports an error), but typed text and suggestions still work, since they
-/// don't need speech recognition.
-@Observable
-final class ElevenLabsVoiceAgent: VoiceAgent {
-    private(set) var state: VoiceState = .idle
-    @ObservationIgnored var onTranscript: ((String, Bool) -> Void)?
-    let tokenEndpoint: URL
-    init(tokenEndpoint: URL) { self.tokenEndpoint = tokenEndpoint }
-    func startListening() { state = .error }   // not configured yet
-    func stopListening() { if state == .listening || state == .error { state = .idle } }
-    func submitText(_ text: String, replay: TextReplay) {
-        // Typed text needs no speech service: deliver it straight away (`replay` is cosmetic).
-        let t = text.trimmingCharacters(in: .whitespacesAndNewlines)
-        guard !t.isEmpty else { state = .idle; return }
-        state = .thinking
-        onTranscript?(t, true)
-    }
-    func speak(_ text: String) {}              // TODO: stream speech via the backend token
-    func interrupt() { state = .idle }
     func transcriptHandled() { if state == .thinking { state = .idle } }
 }

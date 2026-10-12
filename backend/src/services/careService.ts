@@ -8,7 +8,8 @@ export type CareResult =
   | { status: 200; body: CareIntelligenceResponse }
   | { status: 400 | 502 | 504; body: { error: string; details?: unknown } };
 
-export const PROVIDER_TIMEOUT_MS = 7000;
+/** How long a provider gets per turn (an LLM needs longer than the mock). */
+export const PROVIDER_TIMEOUT_MS = Number(process.env.CARE_PROVIDER_TIMEOUT_MS ?? 20_000);
 
 export async function handleCareRequest(raw: unknown, provider: CareIntelligenceProvider): Promise<CareResult> {
   const parsed = CareRequest.safeParse(raw);

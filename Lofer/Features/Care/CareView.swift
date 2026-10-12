@@ -116,7 +116,7 @@ struct VoiceBar: View {
             VoiceOrb(state: app.voice.state, size: 110).frame(width: 64, height: 52).clipped().onTapGesture { app.micTapped() }
                 .accessibilityAddTraits(.isButton).accessibilityLabel("Talk")
             Spacer()
-            Text([.listening: "Listening…", .thinking: "Thinking…", .speaking: "Tap to interrupt"][app.voice.state] ?? "Tap to talk")
+            Text(app.voice.problem?.shortLabel ?? [.listening: "Listening…", .thinking: "Thinking…", .speaking: "Tap to interrupt"][app.voice.state] ?? "Tap to talk")
                 .font(LoferFont.ui(12.5)).foregroundStyle(app.voice.state == .listening ? Color.loferPeach : Color.loferMuted)
         }
         .buttonStyle(.plain)

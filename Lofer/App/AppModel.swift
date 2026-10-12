@@ -13,12 +13,12 @@ final class AppModel {
     var path: [Page] = []
 
     // Shared services. `voice` is any VoiceAgent: the mock now, a real provider later.
-    let memory = BodyMemoryStore()
+    let memory: BodyMemoryStore
     let voice: any VoiceAgent
     let device: DeviceInterface = MockLoferDevice()
     /// Care Intelligence: Lofer's backend in Debug builds (POST /api/care, run `npm start` in
     /// backend/), with the on-device service as fallback. See CareIntelligenceConfig.
-    let intelligence: CareIntelligenceService = CareIntelligenceConfig.fromLaunchArguments().makeService()
+    let intelligence: CareIntelligenceService
     let body = BodySceneController()
     @ObservationIgnored private(set) lazy var care: CareFlowModel = {
         let c = CareFlowModel(memory: memory, intelligence: intelligence, device: device, voice: voice, body: body)
@@ -43,9 +43,15 @@ final class AppModel {
     /// The pending "heard you → act on it" step. Cancelled when newer input arrives or the user leaves.
     @ObservationIgnored private var transcriptTask: Task<Void, Never>?
 
-    /// The voice provider is chosen here (default: the mock). Pass another VoiceAgent to swap it.
-    init(voice: any VoiceAgent = MockVoiceAgent()) {
+    /// The voice provider is chosen here (default: the mock; LoferApp passes VoiceConfig's choice).
+    /// Pass another VoiceAgent, CareIntelligenceService or memory store to swap them (tests do).
+    init(voice: (any VoiceAgent)? = nil,
+         intelligence: CareIntelligenceService = CareIntelligenceConfig.fromLaunchArguments().makeService(),
+         memory: BodyMemoryStore? = nil) {
+        let voice = voice ?? MockVoiceAgent()
         self.voice = voice
+        self.intelligence = intelligence
+        self.memory = memory ?? BodyMemoryStore()
         voice.onTranscript = { [weak self] text, final in
             Task { @MainActor in self?.transcript(text, final: final) }
         }
@@ -55,7 +61,7 @@ final class AppModel {
         //   -LoferDemoFull  plays a whole conversation, through the movement check to treatment
         let args = ProcessInfo.processInfo.arguments
         if args.contains("-LoferDemo") || args.contains("-LoferDemoFull") {
-            memory.samplesInformDecisions = true   // the demo story relies on the sample history
+            self.memory.samplesInformDecisions = true   // the demo story relies on the sample history
             // The full demo follows one investigation: story → confirm the spot → movement
             // check → observation → summary → suggestion → session.
             let script: [(Double, String)] = args.contains("-LoferDemoFull")
@@ -71,24 +77,30 @@ final class AppModel {
 
     // MARK: navigation
     func finishSplash() { if screen == .splash { withAnimation(Motion.slow) { screen = .home } } }
-    func goHome() { transcriptTask?.cancel(); care.reset(); input.visible = false; homeHeard = ""; homeContext = ""; homeLine = Self.greetings[0]; withAnimation(Motion.slow) { screen = .home } }
-    func openBody() { transcriptTask?.cancel(); care.beginWithBody(); withAnimation(Motion.slow) { screen = .care } }
+    func goHome() { dropPendingTranscript(); care.reset(); input.visible = false; homeHeard = ""; homeContext = ""; homeLine = Self.greetings[0]; withAnimation(Motion.slow) { screen = .home } }
+    func openBody() { dropPendingTranscript(); care.beginWithBody(); withAnimation(Motion.slow) { screen = .care } }
     func treatAgain(_ e: Episode) {
         path = []
-        transcriptTask?.cancel()
+        dropPendingTranscript()
         care.beginWithBody()
         withAnimation(Motion.slow) { screen = .care }
         Task { await care.applyTarget(.id(e.symptom.areaId)) }
     }
 
     // MARK: voice + typing (both end up as a transcript)
-    /// Mic button: start listening (mock = a text field + suggestion), stop, or interrupt Lofer.
+    /// Mic button: start listening, stop, or interrupt Lofer. With the mock there's no
+    /// microphone, so a text field (plus a suggestion) stands in for speech. With real voice,
+    /// listening is hands-free: it stays on after Lofer answers, until the mic is tapped again.
     func micTapped() {
         if voice.state == .listening { voice.stopListening(); input.visible = false; return }
         voice.startListening()
-        input = InputState(visible: true, voiceMode: true, suggestion: suggestion())
+        input = voice.usesMicrophone ? InputState() : InputState(visible: true, voiceMode: true, suggestion: suggestion())
     }
-    func keyboardTapped() { input = InputState(visible: true, voiceMode: false, suggestion: nil) }
+    /// Switching to typing turns the microphone off.
+    func keyboardTapped() {
+        if voice.usesMicrophone { voice.stopListening() }
+        input = InputState(visible: true, voiceMode: false, suggestion: nil)
+    }
     func submitTyped(_ text: String) { input.visible = false; voice.submitText(text, replay: .instant) }
     func useSuggestion() { if let s = input.suggestion { input.visible = false; voice.submitText(s, replay: .asSpeech) } }
     func closeInput() { input.visible = false; voice.stopListening() }
@@ -98,8 +110,11 @@ final class AppModel {
         guard final else { return }
         input.visible = false
         transcriptTask?.cancel()
+        // A short pause first, so a quick correction replaces what was just said. Never for
+        // "stop", "pause" or discomfort: those go to the care flow at once.
+        let pause = VoiceInterrupts.isUrgent(text) ? 0 : 600
         transcriptTask = Task { @MainActor in
-            try? await Task.sleep(for: .milliseconds(600))
+            if pause > 0 { try? await Task.sleep(for: .milliseconds(pause)) }
             guard !Task.isCancelled else { return }
             if screen == .home {
                 // The story is told on the home screen; Lofer acknowledges, then the body takes over.
@@ -118,6 +133,14 @@ final class AppModel {
             }
             voice.transcriptHandled()
         }
+    }
+
+    /// Abandons the transcript still being acted on (the user left or started again), and tells
+    /// the voice agent so it doesn't keep waiting for it.
+    private func dropPendingTranscript() {
+        guard let task = transcriptTask else { return }
+        task.cancel(); transcriptTask = nil
+        voice.transcriptHandled()
     }
 
     /// What the user would plausibly say next (offered as a one-tap suggestion while "listening").

@@ -1,0 +1,320 @@
+﻿ID,Page,Section,Kind,English,Chinese (your translation),Notes
+001,Landing page (index.html),page,browser tab title,Lofer: Personal Muscle Care,Lofer：个性化肌肉护理,
+002,Landing page (index.html),page,search-result description,"Lofer, in development, is an AI-powered smart wearable for personalised muscle care. Describe what you feel, and it suggests which area of your body needs the most care and which setting to use, then delivers heat, micro-current stimulation and deep-vibration massage.",正在开发中的 Lofer，是一款 AI 驱动的智能穿戴设备，专注于提供个性化肌肉护理。向它描述你的感受，它便能引导你判断身体哪个部位最需要护理，并为你定制专属方案，再以热敷、微电流刺激和深层振动按摩带来护理。,
+003,Landing page (index.html),top bar,link / button,Lofer,Lofer,
+004,Landing page (index.html),top bar,link / button,Why Lofer,为什么选 Lofer,
+005,Landing page (index.html),top bar,link / button,The Lofer App,Lofer App,
+006,Landing page (index.html),top bar,link / button,The Lofer Loop,Lofer 护理循环,
+007,Landing page (index.html),top bar,link / button,The Lofer Tile,Lofer 贴片,
+008,Landing page (index.html),top bar,link / button,Inside Lofer,Lofer 的内部,
+009,Landing page (index.html),top bar,link / button,Get early access,抢先体验,
+010,Landing page (index.html),hero,paragraph,In development,开发中,
+011,Landing page (index.html),hero,main heading,"Know what to do when your muscles feel tight or sore, any time of day.",肌肉紧绷或酸痛，任何时候都知道该怎么照顾它。,
+012,Landing page (index.html),hero,paragraph,"Lofer is an AI-powered smart wearable for personalised muscle care. Describe what you feel, and it suggests where in your body needs the most care and design customised programme. It then delivers heat, micro-current stimulation and deep-vibration massage, and asks how you feel afterwards.",Lofer 是一款 AI 驱动的智能穿戴设备，专注于个性化肌肉护理。描述你的感受，它便能判断身体哪个部位最需要护理，并为你定制专属方案。随后，它以热敷、微电流刺激和深层振动按摩执行护理，并在结束后询问你的感受。,
+013,Landing page (index.html),hero,link / button,Join the waitlist,加入体验名单,
+014,Landing page (index.html),why,paragraph,Our mission,我们的使命,
+015,Landing page (index.html),why,section title,Everyday aches shouldn't leave you guessing.,日常酸痛，不该让你不知所措。,
+016,Landing page (index.html),why,paragraph,"A physiotherapist can tell you where a problem is likely coming from and how to ease it, but that takes an appointment, time and money. Home wellness devices like massage guns and heat pads are always to hand, but they leave every decision to you: where to apply it, which setting to use, for how long, and when to stop.",物理治疗师带给你专业的问题诊断和恢复，但需要预约，需要时间，价格也较贵。筋膜枪、热敷垫这类家用健康设备触手可及，却把每一个决定都留给你：敷在哪里、用哪一档、用多久、什么时候停。,
+017,Landing page (index.html),why,paragraph,"Lofer brings together the best of both. It listens to how you describe your symptoms, asks a few follow-up questions, and suggests which area of your body needs the most care and which session to run. Then it delivers the session itself, with built-in safety controls, and asks how it went. When something sounds like it needs a professional, it says so.",Lofer 把两者的长处融为一体。它倾听你对症状的描述，追问几个问题，判断身体哪个部位最需要护理、该进行哪一套方案。随后由它来完成这次护理，内置安全控制，并在结束后询问感受。若有些情况需要专业帮助，它会如实提醒。,
+018,Landing page (index.html),why,sub-heading,"The best of both, at home.",两者之长，在家兼得。,
+019,Landing page (index.html),why,card title,Professional care,专业护理,
+020,Landing page (index.html),why,paragraph,Physiotherapy and similar,物理治疗及同类服务,
+021,Landing page (index.html),why,list item,"Expert, hands-on assessment",专业的手法评估,
+022,Landing page (index.html),why,list item,A plan made for you,为你量身定制方案,
+023,Landing page (index.html),why,list item,"Costly, session after session",多次诊疗，费用不菲,
+024,Landing page (index.html),why,list item,"Booking, travel and waiting",预约、奔波与等待,
+025,Landing page (index.html),why,list item,Not there when it flares up at home,在家突发时，它不在身边,
+026,Landing page (index.html),why,card title,Home wellness devices,家用健康设备,
+027,Landing page (index.html),why,paragraph,"Massage guns, heat pads, rollers",筋膜枪、热敷垫、滚轴,
+028,Landing page (index.html),why,list item,Affordable and always at home,价格亲民，随时在家可用,
+029,Landing page (index.html),why,list item,"Quick to use, whenever you like",随时使用，快捷方便,
+030,Landing page (index.html),why,list item,"Can't tell you which area needs the most care, or why",说不清哪里最需要护理，也给不出理由,
+031,Landing page (index.html),why,list item,No guidance on setting or how long,不告诉你用哪一档、用多久,
+032,Landing page (index.html),why,list item,"Can't tell if it's helping, or when to stop",不知道有没有效，也不知道何时该停,
+033,Landing page (index.html),why,short label,Best [br] of both,两者<br />兼得,
+034,Landing page (index.html),why,card title,Lofer,Lofer,same sentence appears elsewhere: translate identically
+035,Landing page (index.html),why,paragraph,"Guidance like a professional's, as close to hand as a home device.",专业级的指导，像家用设备一样触手可及。,
+036,Landing page (index.html),why,list item,Listens to your symptoms and asks follow-up questions,倾听你的症状，并追问细节,
+037,Landing page (index.html),why,list item,"Suggests where needs the most care, and design a session for you",判断哪里最需要护理，为你设计专属方案,
+038,Landing page (index.html),why,list item,"Heat, micro-current and vibration from one wearable",集热敷、微电流刺激与深层振动按摩于一身,
+039,Landing page (index.html),why,list item,"At home, whenever it aches",酸痛来袭时在家可用,
+040,Landing page (index.html),why,list item,"Checks in before and after every session, with built-in safety controls",每次护理前后都会询问，内置安全控制,
+041,Landing page (index.html),why,list item,Suggests seeing a professional when your answers call for it,当你的回答需要时，建议寻求专业帮助,
+042,Landing page (index.html),checks,paragraph,The Lofer App,Lofer App,same sentence appears elsewhere: translate identically
+043,Landing page (index.html),checks,section title,It starts with how you feel.,一切，从你的感受开始。,
+044,Landing page (index.html),checks,paragraph,"You describe what you feel. Lofer asks follow-up questions that refine what happens next, and guides a simple movement check before suggesting a session. Some answers lead to a session. Others suggest you pause and speak to a professional.",你描述自己的感受。Lofer 会追问一些细节，让接下来的判断更准确，并在建议护理方案前，引导你完成一个简单的动作检查。有些回答会导向一次护理，有些则建议你先停下来，去咨询专业人士。,
+045,Landing page (index.html),checks,sub-heading,Asks about your symptoms,询问你的症状,
+046,Landing page (index.html),checks,paragraph,"One question at a time, with quick answers to tap.",一次一个问题，快捷答案轻点即选。,
+047,Landing page (index.html),checks,sub-heading,Pinpoints the area,定位具体部位,
+048,Landing page (index.html),checks,paragraph,"Tap the body, or just say “more towards the back”.",点击身体，或直接说「再往后一点」。,
+049,Landing page (index.html),checks,sub-heading,Checks a movement,检查一个动作,
+050,Landing page (index.html),checks,paragraph,"A guided movement before the session, and again after.",护理前引导完成一个动作，结束后再测一次。,
+051,Landing page (index.html),checks,sub-heading,Suggests a session,建议护理方案,
+052,Landing page (index.html),checks,paragraph,"Shaped by your answers, with built-in safety controls.",由你的回答塑造，内置安全控制。,
+053,Landing page (index.html),checks,caption,Screens from the current iOS app prototype.,当前 iOS App 的界面截图。,
+054,Landing page (index.html),loop,paragraph,The Lofer Loop,Lofer 护理循环,same sentence appears elsewhere: translate identically
+055,Landing page (index.html),loop,section title,"Six steps, one connected process.",六个步骤，一套流程。,
+056,Landing page (index.html),loop,paragraph,"Each step feeds the next, so a session begins with information, and what happens afterwards counts.",每一步都为下一步提供依据。护理从了解信息开始，结束后的感受同样重要。,
+057,Landing page (index.html),loop,diagram label,Listen,倾听,
+061,Landing page (index.html),loop,diagram label,Reassess,复评,
+062,Landing page (index.html),loop,diagram label,Learn,积累,
+063,Landing page (index.html),loop,diagram label,Each step,每一步,
+064,Landing page (index.html),loop,diagram label,informs the next,都为下一步提供依据,
+065,Landing page (index.html),loop,sub-heading,Listen,倾听,same sentence appears elsewhere: translate identically
+073,Landing page (index.html),loop,sub-heading,Reassess,复评,same sentence appears elsewhere: translate identically
+075,Landing page (index.html),loop,sub-heading,Learn,积累,same sentence appears elsewhere: translate identically
+077,Landing page (index.html),tile,paragraph,The Lofer tile,Lofer 贴片,
+078,Landing page (index.html),tile,section title,"One small tile, four functions.",一块小贴片，四种功能。,
+079,Landing page (index.html),tile,sub-heading,Heat,热敷,
+080,Landing page (index.html),tile,paragraph,Gentle warmth to ease daily tension and help muscles relax.,温和的热度，舒缓日常紧绷，帮助肌肉放松。,
+081,Landing page (index.html),tile,sub-heading,Vibration massage,深层振动按摩,
+082,Landing page (index.html),tile,paragraph,"From a soft hum to a deeper pulse, to soothe everyday tightness.",从轻柔低鸣到深沉脉冲，抚平日常的紧绷感。,
+083,Landing page (index.html),tile,sub-heading,Micro-current,微电流刺激,
+084,Landing page (index.html),tile,paragraph,Micro pulses that help muscles release and unwind.,柔和微电流脉冲，帮助肌肉释放、放松下来。,
+085,Landing page (index.html),tile,sub-heading,Muscle signals,肌肉信号,
+086,Landing page (index.html),tile,paragraph,"Designed to read muscle response, so care can meet you where you are.",读取肌肉反应，让护理更贴合你的身体状态。,
+087,Landing page (index.html),tile,sub-heading,Soft to the touch,触感柔和,
+088,Landing page (index.html),tile,sub-heading,A gentle skin side,亲肤水凝胶,
+089,Landing page (index.html),tile,sub-heading,Latches edge to edge,边对边扣合,
+090,Landing page (index.html),tile,sub-heading,One cable charges four,一根线，充四块,
+091,Landing page (index.html),history,paragraph,Personal,个性化,
+092,Landing page (index.html),history,section title,Your next session starts with a history.,下一次护理，从过往记录开始。,
+093,Landing page (index.html),history,paragraph,"Lofer keeps a record of what you reported, what was checked, which session you ran and how it felt afterwards. The next time something aches, it starts from that record, not from scratch. You can also share a summary with a professional.",Lofer 会记录你反馈的感受、检查的内容、进行的护理方案，以及事后的感受。下次酸痛再来，它从这份记录出发，而非从头开始。你也可以把摘要分享给专业人士。,
+094,Landing page (index.html),history,short label,"Shoulder, after tennis",肩部，网球之后,
+095,Landing page (index.html),history,short label,Example record,示例记录,
+096,Landing page (index.html),history,record label,Reported,反馈,
+097,Landing page (index.html),history,record value,Tight when lifting the arm overhead,手臂举过头顶时感到紧绷,
+098,Landing page (index.html),history,record label,Checked,检查,
+099,Landing page (index.html),history,record value,Arm raise: pulling about halfway,抬臂动作：举到一半时有牵拉感,
+100,Landing page (index.html),history,record label,Session,护理,
+101,Landing page (index.html),history,record value,"Gentle session · heat, micro-current and vibration massage · 10 min",轻柔护理 · 热敷、微电流刺激与深层振动按摩 · 10 分钟,
+102,Landing page (index.html),history,record label,Result,结果,
+103,Landing page (index.html),history,record value,“A little better.” Arm raise felt fine.,「好了一些。」抬臂动作感觉正常。,
+104,Landing page (index.html),device,paragraph,Inside Lofer,Lofer 的内部,same sentence appears elsewhere: translate identically
+105,Landing page (index.html),device,section title,Built to sense and act.,为感知与行动而生。,
+106,Landing page (index.html),device,paragraph,"Each Lofer tile is a soft silicone pad, designed at 56 × 53.5 mm and 6.2 mm thick. Scroll to look through its layers.",每块 Lofer 贴片都是一片柔软的硅胶垫，设计尺寸 56 × 53.5 毫米，厚 6.2 毫米。向下滚动，逐层看透它的结构。,
+107,Landing page (index.html),device,sub-heading,Silicone cover,硅胶外壳,
+108,Landing page (index.html),device,paragraph,Soft-touch with multiple color options,柔触感，多种颜色可选。,
+109,Landing page (index.html),device,sub-heading,Battery,电池,
+110,Landing page (index.html),device,paragraph,20 × 30 × 4 mm LiPo.,20 × 30 × 4 毫米锂聚合物电池。,
+111,Landing page (index.html),device,sub-heading,Custom circuit board,定制电路板,
+112,Landing page (index.html),device,paragraph,"ESP32-S3, drivers and an EMG front end.",ESP32-S3、驱动模块与 EMG 前端。,
+113,Landing page (index.html),device,sub-heading,Insulating foam,隔热泡棉,
+114,Landing page (index.html),device,paragraph,Keeps the heater's heat away from the battery.,将加热膜的热量与电池隔开。,
+115,Landing page (index.html),device,sub-heading,Rigid chassis,刚性支架,
+116,Landing page (index.html),device,paragraph,"Edge magnets, vibration motor and thermal cut-off.",边缘磁铁、振动马达与热熔断器。,
+117,Landing page (index.html),device,sub-heading,Heater film,加热膜,
+118,Landing page (index.html),device,paragraph,20 × 30 mm.,20 × 30 毫米。,
+119,Landing page (index.html),device,sub-heading,Hydrogel liner,水凝胶衬垫,
+120,Landing page (index.html),device,paragraph,"With two built-in EMG electrodes, against your skin.",内置两枚 EMG 电极，贴合你的皮肤。,
+121,Landing page (index.html),device,paragraph,"The hardware is in prototype, and these schematics are a work in progress.",硬件处于原型阶段，这些示意图仍在完善中。,
+122,Landing page (index.html),waitlist,paragraph,Move · Recover · Live better,活动 · 恢复 · 生活更美好,
+123,Landing page (index.html),waitlist,section title,Be among the first to try Lofer.,成为最早体验 Lofer 的人。,
+124,Landing page (index.html),waitlist,button,Join the waitlist,加入体验名单,same sentence appears elsewhere: translate identically
+125,Landing page (index.html),footer,short label,Lofer,Lofer,same sentence appears elsewhere: translate identically
+126,Landing page (index.html),footer,paragraph,Lofer is in development. © Lofer · Privacy Policy,Lofer 正在开发中。© Lofer · 隐私政策,"contains a link: keep the link, translate its words; contains the current year (auto)"
+127,Landing page (index.html),footer,paragraph,"Lofer is designed for general wellness, relaxation and muscle comfort. It is not a medical device, and it is not intended to diagnose, treat, cure or prevent any disease, medical condition or injury. If you are pregnant, have a pacemaker or have a pre-existing health condition, please consult a healthcare professional before use.",Lofer 面向日常健康、放松与肌肉舒适而设计，不是医疗设备，不用于诊断、治疗、治愈或预防任何疾病、健康状况或损伤。如果你正在孕期、体内有心脏起搏器，或有既往健康状况，请在使用前咨询医疗专业人士。,
+128,Landing page (index.html),top bar,screen-reader label,Lofer home,Lofer 首页,
+129,Landing page (index.html),top bar,screen-reader label,Main,主导航,
+130,Landing page (index.html),checks,image description (alt text),Lofer asks: Does anything bring it on? For example lifting or rotating your arm. Quick answers appear below.,Lofer 提问：有没有什么会引发它？比如抬手臂或转动手臂。下方出现快捷答案。,
+131,Landing page (index.html),checks,image description (alt text),"A 3D body zoomed to the right shoulder, with the back of the shoulder highlighted and arrows to move the spot.",3D 人体模型放大到右肩，肩后侧被高亮标出，并有箭头可移动位置。,
+132,Landing page (index.html),checks,image description (alt text),"The Arm raise movement check: an animated figure raises its arm, with four answers from Feels fine to Can't do it comfortably.",抬臂动作检查：动画人物抬起手臂，下方有四个选项，从「感觉正常」到「无法舒适完成」。,
+133,Landing page (index.html),checks,image description (alt text),"Suggested care: Targeted shoulder relief, 15 minutes, moderate, with warmth, with Customise and Start session buttons.",建议护理：肩部针对性舒缓，15 分钟，中等强度，含热敷，并有「自定义」与「开始护理」按钮。,
+134,Landing page (index.html),tile,image description (alt text),"A Lofer tile on an arm, with warm lines rising and a soft glow in the skin around it.",一块 Lofer 贴片贴在手臂上，温热的气流上升，皮肤周围泛起柔和的光晕。,
+135,Landing page (index.html),tile,image description (alt text),"A Lofer tile on an arm, with rings of vibration spreading through the skin around it.",一块 Lofer 贴片贴在手臂上，一圈圈振动波在周围皮肤中扩散。,
+136,Landing page (index.html),tile,image description (alt text),"A Lofer tile on an arm, with faint blue lines of micro-current running along the skin.",一块 Lofer 贴片贴在手臂上，微弱的蓝色微电流沿着皮肤流动。,
+137,Landing page (index.html),tile,image description (alt text),"A Lofer tile on an arm, with a muscle-signal trace above it and pale lines along the skin.",一块 Lofer 贴片贴在手臂上，上方显示肌肉信号波形，皮肤表面有淡色线条。,
+138,Landing page (index.html),tile,image description (alt text),"Five Lofer tiles in a curved row, in different colours.",五块 Lofer 贴片呈弧形排列，颜色各异。,
+139,Landing page (index.html),tile,image description (alt text),"The underside of a Lofer tile, with a hydrogel liner and two grey electrodes, next to the top of another tile.",一块 Lofer 贴片的底面，带有水凝胶衬垫和两枚灰色电极，旁边是另一块贴片的正面。,
+140,Landing page (index.html),tile,image description (alt text),Three cream Lofer tiles latched edge to edge.,三块米色 Lofer 贴片边对边扣合在一起。,
+141,Landing page (index.html),tile,image description (alt text),Three Lofer tiles standing in a charging dock with a USB-C cable.,三块 Lofer 贴片立在充电底座中，连着一根 USB-C 线。,
+142,Landing page (index.html),device,image description (alt text),"Exploded view of one Lofer tile: silicone cover, battery, circuit board, insulating foam, rigid chassis, heater film and hydrogel liner.",一块 Lofer 贴片的分解图：硅胶外壳、电池、电路板、隔热泡棉、刚性支架、加热膜与水凝胶衬垫。,
+143,Waitlist form (src/waitlist/modal.js),waitlist form,screen-reader label,Close,关闭,
+144,Waitlist form (src/waitlist/modal.js),waitlist form,paragraph,Step 1 of 2,第 1 步，共 2 步,
+145,Waitlist form (src/waitlist/modal.js),wl__step,section title,Be the first to experience Lofer.,成为最早体验 Lofer 的人。,
+146,Waitlist form (src/waitlist/modal.js),wl__step,paragraph,"Personalised body care, made accessible. [br] Join our waitlist for early access.",个性化身体护理，触手可及。<br />加入体验名单，抢先体验。,
+147,Waitlist form (src/waitlist/modal.js),wl__step,form label,Name,姓名,
+148,Waitlist form (src/waitlist/modal.js),wl__step,form label,Email address,邮箱地址,
+149,Waitlist form (src/waitlist/modal.js),wl__step,button,Join the Waitlist,加入体验名单,
+150,Waitlist form (src/waitlist/modal.js),wl__step,paragraph,We'll use your information to manage your waitlist registration and contact you about early access. Read our Privacy Policy.,我们会使用你的信息来管理体验名单登记，并就抢先体验与你联系。请阅读我们的隐私政策。,"contains a link: keep the link, translate its words"
+151,Waitlist form (src/waitlist/modal.js),wl__step,paragraph,You're on the waitlist.,你已加入体验名单。,
+152,Waitlist form (src/waitlist/modal.js),wl__step,section title,Help us build Lofer for you.,帮我们为你打造 Lofer。,
+153,Waitlist form (src/waitlist/modal.js),wl__step,paragraph,A couple of quick questions to help shape what we build next. Both are optional.,几个简单的问题，帮助我们确定接下来的方向。两题均为选填。,contains bold text
+154,Waitlist form (src/waitlist/modal.js),wl__step,form label,What interests you most about Lofer?,Lofer 最吸引你的是什么？,
+155,Waitlist form (src/waitlist/modal.js),wl__step,dropdown option,Choose an option,请选择一个选项,
+156,Waitlist form (src/waitlist/modal.js),wl__step,form label,How much would you be willing to pay for a Lofer starter kit (6 intelligent body-care patches)?,你愿意为 Lofer 入门套装（6 片智能身体护理贴片）支付多少？,
+157,Waitlist form (src/waitlist/modal.js),wl__step,dropdown option,Choose an option,请选择一个选项,same sentence appears elsewhere: translate identically
+158,Waitlist form (src/waitlist/modal.js),wl__step,paragraph,Assume a one-time purchase of the hardware. Any optional subscription would be separate.,假设硬件为一次性购买。任何可选订阅将另行计算。,
+159,Waitlist form (src/waitlist/modal.js),wl__step,form label,"(the marketing consent sentence: see ""Consent wording"" below)",（营销同意语句：见下方「同意措辞」）,
+160,Waitlist form (src/waitlist/modal.js),wl__step,paragraph,You can unsubscribe from marketing emails at any time. Your waitlist registration won't be affected.,你可以随时退订营销邮件。你的体验名单登记不会受到影响。,
+161,Waitlist form (src/waitlist/modal.js),wl__step,button,Submit,提交,
+162,Waitlist form (src/waitlist/modal.js),wl__step,button,Skip for now,暂时跳过,
+163,Waitlist form (src/waitlist/modal.js),wl__step wl__step--done,section title,You're on the list.,你已加入名单。,
+164,Waitlist form (src/waitlist/modal.js),wl__step wl__step--done,paragraph,We'll be in touch when Lofer is ready. [br] Thanks for being part of the beginning.,Lofer 准备好后，我们会与你联系。<br />感谢你参与这段起点。,
+165,Waitlist form (src/waitlist/modal.js),wl__step wl__step--done,button,Back to Lofer,返回 Lofer,
+166,Waitlist form (src/waitlist/modal.js),messages,error shown in Step 1 (they are NOT yet on the list) [invalid_email],Please enter a valid email address.,请输入有效的邮箱地址。,
+167,Waitlist form (src/waitlist/modal.js),messages,error shown in Step 1 (they are NOT yet on the list) [invalid_name],Please enter your name.,请输入你的姓名。,
+168,Waitlist form (src/waitlist/modal.js),messages,error shown in Step 1 (they are NOT yet on the list) [rate_limited],We're getting a lot of sign-ups right now. Please try again in a few minutes. You're not on the list yet.,目前注册人数较多。请几分钟后再试。你尚未加入名单。,
+169,Waitlist form (src/waitlist/modal.js),messages,error shown in Step 1 (they are NOT yet on the list) [network],We couldn't reach the waitlist. Please check your connection and try again. You're not on the list yet.,无法连接到体验名单。请检查网络后重试。你尚未加入名单。,
+170,Waitlist form (src/waitlist/modal.js),messages,error shown in Step 1 (they are NOT yet on the list) [timeout],That's taking longer than expected. Please try again. You're not on the list yet.,耗时比预期更长。请重试。你尚未加入名单。,
+171,Waitlist form (src/waitlist/modal.js),messages,error shown in Step 1 (they are NOT yet on the list) [unavailable],The waitlist isn't available right now. Please try again later. You're not on the list yet.,体验名单目前不可用。请稍后再试。你尚未加入名单。,
+172,Waitlist form (src/waitlist/modal.js),messages,error shown in Step 1 (they are NOT yet on the list) [server],"Something went wrong on our side, and your sign-up wasn't saved. Please try again in a moment.",我们这边出了点问题，你的登记没有保存成功。请稍后重试。,
+173,Waitlist form (src/waitlist/modal.js),messages,error shown in Step 2 (they ARE on the list) [invalid_token],"We couldn't save these answers. If you've signed up with this email before, your original sign-up and answers stay as they were, and you're on the waitlist either way. You can skip this step.",这些回答没有保存成功。如果你之前用这个邮箱登记过，原来的登记和回答保持不变，无论如何你都在体验名单上。你可以跳过这一步。,
+174,Waitlist form (src/waitlist/modal.js),messages,error shown in Step 2 (they ARE on the list) [rate_limited],"We couldn't save your answers just now, but you're still on the waitlist. Please try again in a few minutes, or skip.",刚才没能保存你的回答，但你仍在体验名单上。请几分钟后重试，或跳过。,
+175,Waitlist form (src/waitlist/modal.js),messages,error shown in Step 2 (they ARE on the list) [network],"We couldn't save your answers (the connection dropped), but you're still on the waitlist. You can try again or skip.",没能保存你的回答（连接中断），但你仍在体验名单上。你可以重试或跳过。,
+176,Waitlist form (src/waitlist/modal.js),messages,error shown in Step 2 (they ARE on the list) [timeout],"Saving your answers is taking longer than expected, but you're still on the waitlist. You can try again or skip.",保存回答耗时比预期更长，但你仍在体验名单上。你可以重试或跳过。,
+177,Waitlist form (src/waitlist/modal.js),messages,error shown in Step 2 (they ARE on the list) [server],"We couldn't save your answers, but you're still on the waitlist. You can try again or skip.",没能保存你的回答，但你仍在体验名单上。你可以重试或跳过。,
+178,Waitlist form (src/waitlist/modal.js),messages,button/status text,Joining…,正在加入……,button text while Step 1 is sending
+179,Waitlist form (src/waitlist/modal.js),messages,button/status text,Still working… this is taking a little longer than usual.,仍在处理……比平时稍久一些。,shown if Step 1 is slow
+180,Waitlist form (src/waitlist/modal.js),messages,button/status text,You're on the list ✓,你已加入名单 ✓,button text for a moment after Step 1 saves
+181,Waitlist form (src/waitlist/modal.js),messages,button/status text,Saving…,正在保存……,button text while Step 2 is sending
+182,Waitlist form (src/waitlist/modal.js),messages,button/status text,Still saving… your place on the waitlist is safe.,仍在保存……你在体验名单上的位置是安全的。,shown if Step 2 is slow
+183,Waitlist choices (src/waitlist/config.js),Consent wording,marketing checkbox sentence,"I'd like to receive occasional product news, updates and offers from Lofer by email.",我希望通过邮件偶尔收到 Lofer 的产品消息、更新与优惠。,IMPORTANT: this exact wording is saved as an audit record in the database under a version name. A Chinese version needs its own new version and a matching row added in Supabase (ask me to do this).
+184,Waitlist choices (src/waitlist/config.js),Step 2 question 1 choice,Step 2 question 1 choice,Sports recovery,运动恢复,saved value stays in English internally (sports_recovery); only the label is translated
+185,Waitlist choices (src/waitlist/config.js),Step 2 question 1 choice,Step 2 question 1 choice,Everyday muscle tension,日常肌肉紧绷,saved value stays in English internally (everyday_tension); only the label is translated
+186,Waitlist choices (src/waitlist/config.js),Step 2 question 1 choice,Step 2 question 1 choice,Preventive body care,预防性身体护理,saved value stays in English internally (preventive_care); only the label is translated
+187,Waitlist choices (src/waitlist/config.js),Step 2 question 1 choice,Step 2 question 1 choice,Convenient at-home care,便捷居家护理,saved value stays in English internally (at_home_convenience); only the label is translated
+188,Waitlist choices (src/waitlist/config.js),Step 2 question 1 choice,Step 2 question 1 choice,"Personalised, AI-powered care",个性化 AI 护理,saved value stays in English internally (ai_personalised); only the label is translated
+189,Waitlist choices (src/waitlist/config.js),Step 2 question 1 choice,Step 2 question 1 choice,Exploring new technology,探索新技术,saved value stays in English internally (exploring_technology); only the label is translated
+190,Waitlist choices (src/waitlist/config.js),Step 2 question 1 choice,Step 2 question 1 choice,Other / Just curious,其他 / 只是好奇,saved value stays in English internally (other_curious); only the label is translated
+191,Waitlist choices (src/waitlist/config.js),Step 2 question 2 choice,Step 2 question 2 choice,Under £100,低于 £100,saved value stays in English internally (under_100); only the label is translated
+192,Waitlist choices (src/waitlist/config.js),Step 2 question 2 choice,Step 2 question 2 choice,£100–£149,£100–£149,saved value stays in English internally (100_149); only the label is translated
+193,Waitlist choices (src/waitlist/config.js),Step 2 question 2 choice,Step 2 question 2 choice,£150–£199,£150–£199,saved value stays in English internally (150_199); only the label is translated
+194,Waitlist choices (src/waitlist/config.js),Step 2 question 2 choice,Step 2 question 2 choice,£200–£249,£200–£249,saved value stays in English internally (200_249); only the label is translated
+195,Waitlist choices (src/waitlist/config.js),Step 2 question 2 choice,Step 2 question 2 choice,£250–£299,£250–£299,saved value stays in English internally (250_299); only the label is translated
+196,Waitlist choices (src/waitlist/config.js),Step 2 question 2 choice,Step 2 question 2 choice,£300–£399,£300–£399,saved value stays in English internally (300_399); only the label is translated
+197,Waitlist choices (src/waitlist/config.js),Step 2 question 2 choice,Step 2 question 2 choice,£400+,£400+,saved value stays in English internally (400_plus); only the label is translated
+198,Waitlist choices (src/waitlist/config.js),Step 2 question 2 choice,Step 2 question 2 choice,Not sure yet,还不确定,saved value stays in English internally (not_sure); only the label is translated
+199,Privacy policy (privacy/index.html),page,browser tab title,Privacy Policy · Lofer,隐私政策 · Lofer,
+200,Privacy policy (privacy/index.html),page,search-result description,"How Lofer collects, uses and protects personal information, including the waitlist.",Lofer 如何收集、使用和保护个人信息，包括体验名单。,
+201,Privacy policy (privacy/index.html),top bar,link / button,Lofer,Lofer,same sentence appears elsewhere: translate identically
+202,Privacy policy (privacy/index.html),top bar,link / button,Back to Lofer,返回 Lofer,same sentence appears elsewhere: translate identically
+203,Privacy policy (privacy/index.html),,main heading,Privacy Policy,隐私政策,
+205,Privacy policy (privacy/index.html),,section title,1. Who we are,1. 我们是谁,
+206,Privacy policy (privacy/index.html),,paragraph,"Lofer is an early-stage, unincorporated project based in the United Kingdom, developing intelligent, personalised body-care technology.",Lofer 是一个位于英国的早期未注册项目，致力于开发智能、个性化的身体护理技术。,
+207,Privacy policy (privacy/index.html),,paragraph,"Lofer is jointly operated by Zuyi Gong and Leyi Jiang, who act as joint data controllers for the personal information described in this policy.",Lofer 由 Zuyi Gong 与 Leyi Jiang 共同运营，二人是本政策所述个人信息的共同数据控制者。,
+208,Privacy policy (privacy/index.html),,paragraph,"For privacy-related questions or requests, you can contact us at:",如有隐私相关问题或请求，可通过以下方式联系我们：,
+209,Privacy policy (privacy/index.html),,paragraph,loferprivacy@gmail.com,loferprivacy@gmail.com,"contains a link: keep the link, translate its words"
+210,Privacy policy (privacy/index.html),,paragraph,Both founders are responsible for ensuring that personal information is handled appropriately.,两位创始人均有责任确保个人信息得到妥善处理。,
+211,Privacy policy (privacy/index.html),,paragraph,The email address above serves as our central contact point for privacy requests.,上述邮箱地址是我们处理隐私请求的统一联系方式。,
+212,Privacy policy (privacy/index.html),,section title,2. Information we collect,2. 我们收集的信息,
+213,Privacy policy (privacy/index.html),,paragraph,"When you join our waitlist, we collect the following:",当你加入体验名单时，我们会收集以下信息：,
+214,Privacy policy (privacy/index.html),,sub-heading,Name and email address,姓名与邮箱地址,
+215,Privacy policy (privacy/index.html),,paragraph,We use this information to register you on the waitlist and contact you about early-access opportunities.,我们使用这些信息为你登记体验名单，并就抢先体验机会与你联系。,
+216,Privacy policy (privacy/index.html),,sub-heading,Pricing preferences (optional),价格偏好（可选）,
+217,Privacy policy (privacy/index.html),,paragraph,We may ask how much you would be willing to pay for a Lofer package containing six intelligent body-care patches.,我们可能会询问你愿意为包含 6 片智能身体护理贴片的 Lofer 套装支付多少。,
+218,Privacy policy (privacy/index.html),,paragraph,Your response helps us understand customer preferences and inform future product development and pricing.,你的回答有助于我们了解客户偏好，并为未来的产品开发与定价提供参考。,
+219,Privacy policy (privacy/index.html),,sub-heading,Marketing preferences (optional),营销偏好（可选）,
+220,Privacy policy (privacy/index.html),,paragraph,"We record whether you have chosen to receive additional product news, updates and promotional communications from Lofer.",我们会记录你是否选择接收 Lofer 的额外产品消息、更新与推广信息。,
+222,Privacy policy (privacy/index.html),,sub-heading,Website information,网站信息,
+223,Privacy policy (privacy/index.html),,paragraph,"When you visit our website, our hosting and security providers may process technical information such as IP addresses, browser information and request logs to operate and protect the website.",当你访问我们的网站时，我们的托管与安全服务提供商可能会处理 IP 地址、浏览器信息和请求日志等技术信息，用于运营和保护网站。,
+224,Privacy policy (privacy/index.html),,paragraph,"We do not intentionally collect medical records, diagnoses or detailed health information through our waitlist.",我们不会通过体验名单有意收集病历、诊断或详细的健康信息。,
+225,Privacy policy (privacy/index.html),,section title,3. How we use your information,3. 我们如何使用你的信息,
+226,Privacy policy (privacy/index.html),,paragraph,We use personal information to:,我们使用个人信息用于：,
+227,Privacy policy (privacy/index.html),,list item,Manage waitlist registrations.,管理体验名单登记。,
+228,Privacy policy (privacy/index.html),,list item,Contact you about your registration and early-access availability.,就你的登记与抢先体验的可用情况与你联系。,
+229,Privacy policy (privacy/index.html),,list item,Understand potential customers' pricing preferences.,了解潜在客户的价格偏好。,
+230,Privacy policy (privacy/index.html),,list item,Inform Lofer's product development and launch planning.,为 Lofer 的产品开发与发布计划提供参考。,
+231,Privacy policy (privacy/index.html),,list item,Send optional marketing communications where you have expressly opted in.,在你明确选择接收时，发送可选的营销信息。,
+232,Privacy policy (privacy/index.html),,list item,Maintain website functionality and security.,维护网站功能与安全。,
+233,Privacy policy (privacy/index.html),,list item,Respond to privacy-related requests.,回应隐私相关请求。,
+234,Privacy policy (privacy/index.html),,paragraph,We do not sell your personal information or use waitlist responses to make medical assessments.,我们不会出售你的个人信息，也不会使用体验名单的回答进行医学评估。,
+235,Privacy policy (privacy/index.html),,section title,4. Our legal basis for processing,4. 我们处理信息的法律依据,
+236,Privacy policy (privacy/index.html),,paragraph,"Under UK GDPR, we rely on the following lawful bases:",根据英国 GDPR，我们依据以下合法基础：,
+237,Privacy policy (privacy/index.html),,sub-heading,Legitimate interests,合法利益,
+239,Privacy policy (privacy/index.html),,paragraph,We consider these interests alongside your rights and reasonable expectations.,我们在考量这些利益时，会同时兼顾你的权利与合理期待。,
+240,Privacy policy (privacy/index.html),,sub-heading,Consent,同意,
+241,Privacy policy (privacy/index.html),,paragraph,We rely on your consent to send optional marketing communications.,我们依赖你的同意来发送可选的营销信息。,
+242,Privacy policy (privacy/index.html),,paragraph,Marketing consent is voluntary and is not required to join the waitlist.,营销同意为自愿，并非加入体验名单的必要条件。,
+243,Privacy policy (privacy/index.html),,paragraph,You may withdraw your consent at any time without affecting your waitlist registration.,你可以随时撤回同意，不会影响你的体验名单登记。,
+244,Privacy policy (privacy/index.html),,paragraph,"Where other applicable privacy laws require additional consent or safeguards, we will implement these before undertaking the relevant processing.",如其他适用的隐私法律要求额外同意或保障措施，我们会在进行相关处理前落实。,
+245,Privacy policy (privacy/index.html),,section title,5. Marketing communications and unsubscribing,5. 营销信息与退订,
+246,Privacy policy (privacy/index.html),,paragraph,Joining our waitlist does not automatically subscribe you to marketing emails.,加入体验名单不会自动为你订阅营销邮件。,
+247,Privacy policy (privacy/index.html),,paragraph,"We will only send you additional product news, promotional updates and offers if you have explicitly opted in.",只有在你明确选择接收时，我们才会向你发送额外的产品消息、推广更新与优惠。,
+248,Privacy policy (privacy/index.html),,paragraph,Every marketing email will include an unsubscribe link.,每封营销邮件都会包含退订链接。,
+249,Privacy policy (privacy/index.html),,paragraph,You can unsubscribe at any time without creating an account or providing a reason.,你可以随时退订，无需创建账户或说明理由。,
+250,Privacy policy (privacy/index.html),,paragraph,Unsubscribing from marketing does not remove you from the waitlist.,退订营销不会将你从体验名单中移除。,
+251,Privacy policy (privacy/index.html),,paragraph,"If you would like to leave the waitlist entirely or request deletion of your information, contact us at:",如果你希望完全退出体验名单或请求删除你的信息，请联系我们：,
+252,Privacy policy (privacy/index.html),,paragraph,loferprivacy@gmail.com,loferprivacy@gmail.com,"contains a link: keep the link, translate its words; same sentence appears elsewhere: translate identically"
+254,Privacy policy (privacy/index.html),,section title,6. How we store and protect your information,6. 我们如何存储和保护你的信息,
+255,Privacy policy (privacy/index.html),,paragraph,We use appropriate technical and organisational measures to protect personal information.,我们采用适当的技术与组织措施保护个人信息。,
+257,Privacy policy (privacy/index.html),,paragraph,Access to personal information is restricted to authorised individuals who require it for legitimate operational purposes.,个人信息的访问仅限于因合法运营需要而获得授权的个人。,
+258,Privacy policy (privacy/index.html),,paragraph,"We take reasonable measures to protect information against unauthorised access, misuse, loss or disclosure.",我们采取合理措施保护信息，防止未经授权的访问、滥用、丢失或泄露。,
+259,Privacy policy (privacy/index.html),,paragraph,We do not make waitlist information publicly accessible.,我们不会公开体验名单信息。,
+260,Privacy policy (privacy/index.html),,section title,7. Sharing your information,7. 共享你的信息,
+261,Privacy policy (privacy/index.html),,paragraph,We may share personal information with trusted service providers that help us operate Lofer.,我们可能与帮助我们运营 Lofer 的可信服务提供商共享个人信息。,
+262,Privacy policy (privacy/index.html),,paragraph,These may include:,这些可能包括：,
+264,Privacy policy (privacy/index.html),,list item,GitHub Pages (provided by GitHub): Hosting and delivering our website.,GitHub Pages（由 GitHub 提供）：托管与交付我们的网站。,
+266,Privacy policy (privacy/index.html),,paragraph,We do not share personal information with third parties for their independent marketing purposes.,我们不会为第三方的独立营销目的而共享个人信息。,
+267,Privacy policy (privacy/index.html),,paragraph,"Where required, we use appropriate contractual arrangements with service providers to protect personal information.",在需要时，我们会与服务提供商签订适当的合同安排，以保护个人信息。,
+268,Privacy policy (privacy/index.html),,section title,8. International visitors and data transfers,8. 国际访客与数据传输,
+269,Privacy policy (privacy/index.html),,paragraph,"Lofer is based in the United Kingdom, but our website may be accessed by people in other countries.",Lofer 位于英国，但其他国家的人也可能访问我们的网站。,
+272,Privacy policy (privacy/index.html),,paragraph,"Depending on your location, you may have additional privacy rights under local laws.",根据你所在的位置，你可能依据当地法律享有额外的隐私权利。,
+273,Privacy policy (privacy/index.html),,paragraph,"For questions about international data processing, contact us at:",如有关于国际数据处理的问题，请联系我们：,
+274,Privacy policy (privacy/index.html),,paragraph,loferprivacy@gmail.com,loferprivacy@gmail.com,"contains a link: keep the link, translate its words; same sentence appears elsewhere: translate identically"
+275,Privacy policy (privacy/index.html),,section title,9. Data retention,9. 数据保留,
+276,Privacy policy (privacy/index.html),,paragraph,We retain personal information only for as long as reasonably necessary for the purposes described in this policy.,我们仅在实现本政策所述目的所需的合理期限内保留个人信息。,
+277,Privacy policy (privacy/index.html),,paragraph,Our intended retention approach is to:,我们计划的保留方式如下：,
+282,Privacy policy (privacy/index.html),,paragraph,"You may request deletion of your personal information at any time, subject to applicable legal requirements.",你可以随时请求删除你的个人信息，但须符合适用法律要求。,
+283,Privacy policy (privacy/index.html),,section title,10. Your privacy rights,10. 你的隐私权利,
+284,Privacy policy (privacy/index.html),,paragraph,"Depending on your location and applicable law, you may have the right to:",根据你所在的位置与适用法律，你可能有权：,
+285,Privacy policy (privacy/index.html),,list item,Access the personal information we hold about you.,访问我们持有的关于你的个人信息。,
+286,Privacy policy (privacy/index.html),,list item,Request correction of inaccurate information.,请求更正不准确的信息。,
+287,Privacy policy (privacy/index.html),,list item,Request deletion of your information.,请求删除你的信息。,
+288,Privacy policy (privacy/index.html),,list item,Object to or restrict certain processing.,反对或限制某些处理。,
+289,Privacy policy (privacy/index.html),,list item,Withdraw consent to marketing.,撤回对营销的同意。,
+290,Privacy policy (privacy/index.html),,list item,Request a copy of certain information in a portable format.,请求以可携带格式获取某些信息的副本。,
+291,Privacy policy (privacy/index.html),,list item,Lodge a complaint with an applicable data protection authority.,向适用的数据保护机构提出投诉。,
+292,Privacy policy (privacy/index.html),,paragraph,"To exercise your rights, contact:",如需行使你的权利，请联系：,
+293,Privacy policy (privacy/index.html),,paragraph,loferprivacy@gmail.com,loferprivacy@gmail.com,"contains a link: keep the link, translate its words; same sentence appears elsewhere: translate identically"
+294,Privacy policy (privacy/index.html),,paragraph,"If you are based in the United Kingdom, you may also contact the Information Commissioner's Office at:",如果你位于英国，也可以联系信息专员办公室：,
+295,Privacy policy (privacy/index.html),,paragraph,https://ico.org.uk,https://ico.org.uk,"contains a link: keep the link, translate its words"
+296,Privacy policy (privacy/index.html),,section title,11. Cookies and website technologies,11. Cookie 与网站技术,
+297,Privacy policy (privacy/index.html),,paragraph,"Our website may use technologies necessary for its operation, security and performance.",我们的网站可能使用运营、安全与性能所需的技术。,
+298,Privacy policy (privacy/index.html),,paragraph,"If we introduce non-essential cookies, analytics or advertising technologies, we will provide appropriate information and obtain consent where required.",如果我们引入非必要 Cookie、分析或广告技术，我们将提供适当信息，并在需要时取得同意。,
+299,Privacy policy (privacy/index.html),,section title,12. Children's privacy,12. 儿童隐私,
+300,Privacy policy (privacy/index.html),,paragraph,Our waitlist is intended for adults aged 18 and over.,我们的体验名单面向 18 岁及以上的成年人。,
+301,Privacy policy (privacy/index.html),,paragraph,We do not knowingly collect personal information from children through the waitlist.,我们不会通过体验名单有意收集儿童的个人信息。,
+302,Privacy policy (privacy/index.html),,paragraph,"If you believe a child has provided personal information, please contact us at:",如果你认为有儿童提供了个人信息，请联系我们：,
+303,Privacy policy (privacy/index.html),,paragraph,loferprivacy@gmail.com,loferprivacy@gmail.com,"contains a link: keep the link, translate its words; same sentence appears elsewhere: translate identically"
+304,Privacy policy (privacy/index.html),,section title,13. Changes to this policy,13. 本政策的变更,
+305,Privacy policy (privacy/index.html),,paragraph,We may update this Privacy Policy as Lofer develops.,随着 Lofer 的发展，我们可能会更新本隐私政策。,
+306,Privacy policy (privacy/index.html),,paragraph,"When we make changes, we will update the date at the top of this page.",当我们做出变更时，会更新本页顶部的日期。,
+307,Privacy policy (privacy/index.html),,paragraph,"Where required, we will provide additional notice or obtain consent before introducing materially different uses of personal information.",在需要时，我们会在引入实质不同的个人信息用途前，提供额外通知或取得同意。,
+308,Privacy policy (privacy/index.html),,section title,14. Contact us,14. 联系我们,
+309,Privacy policy (privacy/index.html),,paragraph,For questions about this Privacy Policy or requests concerning your personal information:,如对本隐私政策有疑问，或对你的个人信息有相关请求：,
+310,Privacy policy (privacy/index.html),,contact block,Lofer [br] Joint data controllers: Zuyi Gong and Leyi Jiang [br] Location: United Kingdom [br] Email: loferprivacy@gmail.com,Lofer<br />共同数据控制者：Zuyi Gong 与 Leyi Jiang<br />所在地：英国<br />邮箱：loferprivacy@gmail.com,"contains a link: keep the link, translate its words; contains bold text"
+312,Privacy policy (privacy/index.html),footer,short label,Lofer,Lofer,same sentence appears elsewhere: translate identically
+313,Privacy policy (privacy/index.html),footer,paragraph,Lofer is in development. © Lofer · Privacy Policy,Lofer 正在开发中。© Lofer · 隐私政策,"contains a link: keep the link, translate its words; contains the current year (auto); same sentence appears elsewhere: translate identically"
+314,Privacy policy (privacy/index.html),footer,paragraph,"Lofer is designed for general wellness, relaxation and muscle comfort. It is not a medical device, and it is not intended to diagnose, treat, cure or prevent any disease, medical condition or injury. If you are pregnant, have a pacemaker or have a pre-existing health condition, please consult a healthcare professional before use.",Lofer 面向日常健康、放松与肌肉舒适而设计，不是医疗设备，不用于诊断、治疗、治愈或预防任何疾病、健康状况或损伤。如果你正在孕期、体内有心脏起搏器，或有既往健康状况，请在使用前咨询医疗专业人士。,same sentence appears elsewhere: translate identically
+315,Privacy policy (privacy/index.html),top bar,screen-reader label,Lofer home,Lofer 首页,same sentence appears elsewhere: translate identically
+316,Landing page (index.html),loop,diagram label,Analyse,,NEW or changed: please translate. DRAFT SUGGESTION (not applied; paste into the Chinese column if you agree): 分析
+317,Landing page (index.html),loop,diagram label,Verify,,NEW or changed: please translate. DRAFT SUGGESTION (not applied; paste into the Chinese column if you agree): 核实
+318,Landing page (index.html),loop,diagram label,Soothe,,NEW or changed: please translate. DRAFT SUGGESTION (not applied; paste into the Chinese column if you agree): 舒缓
+319,Landing page (index.html),loop,paragraph,"Capture symptoms, onset and activity context.",,NEW or changed: please translate. DRAFT SUGGESTION (not applied; paste into the Chinese column if you agree): 记录症状、发作时间和活动情境。
+320,Landing page (index.html),loop,paragraph,Consider possible contributors and what to clarify.,,NEW or changed: please translate. DRAFT SUGGESTION (not applied; paste into the Chinese column if you agree): 考量可能的成因，以及还需弄清的地方。
+321,Landing page (index.html),loop,paragraph,Use focused questions or movement checks to refine the view.,,NEW or changed: please translate. DRAFT SUGGESTION (not applied; paste into the Chinese column if you agree): 通过针对性的提问或动作检查，完善判断。
+322,Landing page (index.html),loop,paragraph,Guide selected warmth or vibration within safety limits.,,NEW or changed: please translate. DRAFT SUGGESTION (not applied; paste into the Chinese column if you agree): 在安全限度内，引导使用所选的热敷或振动。
+323,Landing page (index.html),loop,paragraph,Compare comfort and movement before and after.,,NEW or changed: please translate. DRAFT SUGGESTION (not applied; paste into the Chinese column if you agree): 对比护理前后的舒适度与动作表现。
+324,Landing page (index.html),loop,paragraph,Record settings and response to inform future care.,,NEW or changed: please translate. DRAFT SUGGESTION (not applied; paste into the Chinese column if you agree): 记录设置与身体反应，为日后的护理提供参考。
+325,Privacy policy (privacy/index.html),,paragraph,Last updated: 12 October 2026,,NEW or changed: please translate. DRAFT SUGGESTION (not applied; paste into the Chinese column if you agree): 最后更新：2026 年 10 月 12 日
+326,Privacy policy (privacy/index.html),,sub-heading,Your interests (optional),,NEW or changed: please translate. DRAFT SUGGESTION (not applied; paste into the Chinese column if you agree): 你的兴趣（可选）
+327,Privacy policy (privacy/index.html),,paragraph,"We may ask what interests you most about Lofer, for example sports recovery or everyday muscle tension.",,NEW or changed: please translate. DRAFT SUGGESTION (not applied; paste into the Chinese column if you agree): 我们可能会询问 Lofer 最吸引你的是什么，例如运动恢复或日常肌肉紧绷。
+328,Privacy policy (privacy/index.html),,paragraph,Your answer helps us understand what people want from Lofer and shape what we build.,,NEW or changed: please translate. DRAFT SUGGESTION (not applied; paste into the Chinese column if you agree): 你的回答有助于我们了解大家对 Lofer 的期待，并确定接下来要打造什么。
+329,Privacy policy (privacy/index.html),,paragraph,"We may also collect administrative information, including the date of registration, marketing consent timestamps, the version and wording of the consent statement presented to you, the version of this policy you were shown and, if you later withdraw consent, the date you did so.",,NEW or changed: please translate. DRAFT SUGGESTION (not applied; paste into the Chinese column if you agree): 我们还可能收集管理信息，包括登记日期、营销同意时间戳、向你展示的同意声明的版本与措辞、你所看到的本政策版本，以及（如果你之后撤回同意）撤回的日期。
+330,Privacy policy (privacy/index.html),,sub-heading,When you unsubscribe or leave the waitlist,,NEW or changed: please translate. DRAFT SUGGESTION (not applied; paste into the Chinese column if you agree): 当你退订或退出体验名单时
+331,Privacy policy (privacy/index.html),,paragraph,"We keep a scrambled (hashed) version of your email address, the date and whether you unsubscribed or left, so that we can respect your choice. It is not stored in a readable form.",,NEW or changed: please translate. DRAFT SUGGESTION (not applied; paste into the Chinese column if you agree): 我们会保留你邮箱地址的加密（哈希）版本、日期，以及你是退订还是退出，以便尊重你的选择。该信息不以可读形式存储。
+332,Privacy policy (privacy/index.html),,paragraph,"We process your name, email address and your optional interest and pricing answers to operate our waitlist, respond to your requests and understand interest in Lofer.",,NEW or changed: please translate. DRAFT SUGGESTION (not applied; paste into the Chinese column if you agree): 我们处理你的姓名、邮箱地址，以及你可选填的兴趣与价格回答，用于运营体验名单、回应你的请求，并了解对 Lofer 的关注。
+333,Privacy policy (privacy/index.html),,paragraph,"We also rely on legitimate interests to keep the minimal record described above when you unsubscribe or leave, so that we don't contact you again.",,NEW or changed: please translate. DRAFT SUGGESTION (not applied; paste into the Chinese column if you agree): 当你退订或退出时，我们同样依据合法利益保留上述最低限度的记录，以免再次联系你。
+334,Privacy policy (privacy/index.html),,paragraph,"When you unsubscribe or leave, we keep only the minimal record described in section 2, so that your choice is respected.",,NEW or changed: please translate. DRAFT SUGGESTION (not applied; paste into the Chinese column if you agree): 当你退订或退出时，我们仅保留第 2 节所述的最低限度记录，以确保你的选择得到尊重。
+335,Privacy policy (privacy/index.html),,paragraph,"Waitlist information is stored using Supabase, a cloud database service, in its London (United Kingdom) region.",,NEW or changed: please translate. DRAFT SUGGESTION (not applied; paste into the Chinese column if you agree): 体验名单信息使用 Supabase 云数据库服务存储，数据位于其伦敦（英国）区域。
+336,Privacy policy (privacy/index.html),,list item,"Supabase: Waitlist database storage (London, United Kingdom).",,NEW or changed: please translate. DRAFT SUGGESTION (not applied; paste into the Chinese column if you agree): Supabase：体验名单数据库存储（英国伦敦）。
+337,Privacy policy (privacy/index.html),,list item,"Email service providers: Sending registration, early-access and optional marketing emails, if implemented. We will name the provider here before we start using one.",,NEW or changed: please translate. DRAFT SUGGESTION (not applied; paste into the Chinese column if you agree): 邮件服务提供商：发送登记、抢先体验与可选营销邮件（如已实现）。在开始使用某一提供商之前，我们会在此注明其名称。
+338,Privacy policy (privacy/index.html),,list item,Google (Gmail): Receiving and answering messages sent to our privacy email address.,,NEW or changed: please translate. DRAFT SUGGESTION (not applied; paste into the Chinese column if you agree): Google（Gmail）：接收并回复发送至我们隐私邮箱的邮件。
+339,Privacy policy (privacy/index.html),,paragraph,Your waitlist information is stored in the United Kingdom.,,NEW or changed: please translate. DRAFT SUGGESTION (not applied; paste into the Chinese column if you agree): 你的体验名单信息存储在英国。
+340,Privacy policy (privacy/index.html),,paragraph,"GitHub, which hosts our website, and Google, which provides our privacy email inbox, may process technical website information and the messages you send us in the United States.",,NEW or changed: please translate. DRAFT SUGGESTION (not applied; paste into the Chinese column if you agree): 托管我们网站的 GitHub，以及提供我们隐私邮箱的 Google，可能会在美国处理网站技术信息和你发送给我们的邮件。
+341,Privacy policy (privacy/index.html),,paragraph,"Where required by applicable data protection laws, we use appropriate safeguards for international transfers, such as recognised adequacy arrangements (including the UK Extension to the EU–US Data Privacy Framework) or approved contractual protections.",,NEW or changed: please translate. DRAFT SUGGESTION (not applied; paste into the Chinese column if you agree): 在适用数据保护法律要求时，我们会为国际传输采用适当保障措施，例如被认可的充分性安排（包括欧盟—美国数据隐私框架的英国延伸）或经批准的合同保护。
+342,Privacy policy (privacy/index.html),,list item,"Delete each waitlist registration 12 months after the date you signed up, unless you ask us to delete it sooner. You're welcome to sign up again if you'd like to stay on the list.",,NEW or changed: please translate. DRAFT SUGGESTION (not applied; paste into the Chinese column if you agree): 自你登记之日起 12 个月后，删除每一份体验名单登记，除非你要求更早删除。如果你希望继续留在名单上，欢迎重新登记。
+343,Privacy policy (privacy/index.html),,list item,Remove you from marketing straight away when you unsubscribe.,,NEW or changed: please translate. DRAFT SUGGESTION (not applied; paste into the Chinese column if you agree): 你退订时，立即将你从营销名单中移除。
+344,Privacy policy (privacy/index.html),,list item,Keep the minimal record of an unsubscribe or departure (section 2) for as long as needed to respect your choice.,,NEW or changed: please translate. DRAFT SUGGESTION (not applied; paste into the Chinese column if you agree): 在需要尊重你的选择期间，保留退订或退出的最低限度记录（见第 2 节）。
+345,Privacy policy (privacy/index.html),,paragraph,"Our website does not use cookies. Its fonts are served from our own website, so visiting it doesn't send your information to font services such as Google Fonts.",,NEW or changed: please translate. DRAFT SUGGESTION (not applied; paste into the Chinese column if you agree): 我们的网站不使用 Cookie。网站字体由我们自己的网站提供，因此访问网站不会把你的信息发送给 Google Fonts 等字体服务。

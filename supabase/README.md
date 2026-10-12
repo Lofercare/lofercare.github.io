@@ -22,7 +22,7 @@ Everything else (reading, exporting, deleting)  ──►  you, in the Supabase 
 
 ## One-time setup
 
-1. In Supabase: **SQL Editor → New query**, paste `migrations/20261010000000_waitlist.sql`, **Run**.
+1. In Supabase: **SQL Editor → New query**, paste each file in `migrations/` in order (`20261010…_waitlist.sql`, then `20261012…_waitlist_consent_zh.sql` for the Chinese consent wording), and **Run** each.
 2. Find your **Project URL** (Project Settings → API), like `https://abcdxyz.supabase.co`.
 3. Locally: put it in `website/.env.local` as `VITE_SUPABASE_URL=…` (the publishable key is already there). Run `npm run dev` in `website/`.
 4. On GitHub: **Settings → Secrets and variables → Actions → Variables**, add `SUPABASE_URL` and `SUPABASE_PUBLISHABLE_KEY`.

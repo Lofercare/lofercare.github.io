@@ -782,3 +782,42 @@ html.wl-open { overflow: hidden; }
 .legal__back { display: inline-flex; margin-top: 40px; }
 .footer a { text-decoration: underline; text-underline-offset: 3px; }
 .footer a:hover { color: var(--ink); }
+
+/* ───────────── Language toggle (EN | 中文) ───────────── */
+.lang { display: inline-flex; padding: 3px; border: 1px solid var(--line-2); border-radius: 999px; background: rgba(248, 243, 237, 0.5); }
+.lang__btn {
+  min-width: 40px; height: 32px; padding: 0 12px; border: 0; border-radius: 999px;
+  background: transparent; color: var(--muted); cursor: pointer;
+  font: 500 13px/1 var(--font-ui); letter-spacing: 0.04em; transition: background 0.2s, color 0.2s;
+}
+.lang__btn:hover { color: var(--ink); }
+.lang__btn.is-active { background: var(--ink); color: var(--cream); }
+.lang__btn:focus-visible { outline: 2px solid var(--peach-deep); outline-offset: 2px; }
+/* The top bar keeps brand, links, toggle and button on one line. */
+.nav { gap: clamp(10px, 2vw, 24px); }
+.nav .lang { margin-left: auto; flex: none; }
+.nav__links + .lang { margin-left: 0; }
+@media (max-width: 380px) { .lang__btn { min-width: 34px; padding: 0 9px; } .nav .button--small { padding: 0 14px; } }
+
+/* ───────────── Chinese typography ─────────────
+   The site's fonts have no Chinese characters, so Chinese uses the system's own Chinese fonts
+   (nothing is downloaded). Italic and tight letter-spacing suit Latin text, not Chinese. */
+html[lang='zh-CN'] {
+  --font-ui: 'Figtree', 'PingFang SC', 'Hiragino Sans GB', 'Noto Sans SC', 'Microsoft YaHei', 'Source Han Sans SC', system-ui, sans-serif;
+}
+html[lang='zh-CN'] body { line-height: 1.75; }
+html[lang='zh-CN'] .hero__title,
+html[lang='zh-CN'] .section__title,
+html[lang='zh-CN'] .waitlist__title,
+html[lang='zh-CN'] .wl__title,
+html[lang='zh-CN'] .legal h1 { font-style: normal; letter-spacing: 0; line-height: 1.25; font-weight: 300; }
+html[lang='zh-CN'] .eyebrow,
+html[lang='zh-CN'] .status-pill,
+html[lang='zh-CN'] .tagline,
+html[lang='zh-CN'] .wl__stepname,
+html[lang='zh-CN'] .legal h3,
+html[lang='zh-CN'] .record__rows dt { letter-spacing: 0.08em; text-transform: none; }
+html[lang='zh-CN'] .gap__subtitle,
+html[lang='zh-CN'] .groupings__head h3 { letter-spacing: 0; font-style: normal; }
+html[lang='zh-CN'] p, html[lang='zh-CN'] li { line-break: strict; overflow-wrap: anywhere; }
+

@@ -83,3 +83,17 @@ website/
   and never claims anyone was signed up. The Supabase **secret** key must never be added anywhere in the website.
 - **Privacy policy:** `privacy/index.html` (its own page at `/privacy/`, linked from the footer and the waitlist). Keep it in step with what is really built.
 - **Tests:** `npm test` here (validation and privacy page); `cd ../supabase && npm test` for the database.
+
+## Chinese version (English / 中文 toggle)
+
+- **How it works:** the English stays in the HTML. Each translatable element has a number from the spreadsheet,
+  `data-i18n="105"` (or `data-i18n-alt="130"` for an attribute). The Chinese lives in `src/i18n/zh.json`, built from
+  `docs/website-text-for-translation.csv` and downloaded only when Chinese is wanted. The code is `src/i18n/i18n.js`.
+- **Choosing the language:** the toggle in the top bar, `?lang=zh` or `?lang=en` in the address (shareable), else the
+  browser's language. Nothing is stored on the visitor's device; internal links carry `?lang=` along.
+- **Changing a translation:** edit the Chinese column in the CSV, then run `npm run i18n` (inside `website/`) and commit `zh.json`.
+- **Adding or changing English text:** give the new element the next free number, add a row to the CSV, run `npm run i18n`.
+  `npm test` fails if a `data-i18n` number has no Chinese.
+- **Waitlist consent:** the Chinese tick-box wording is stored in the database as version `marketing-v1-zh`
+  (`supabase/migrations/…_waitlist_consent_zh.sql`). Changing that wording needs a new version, never an edit.
+- **Not translated:** the app screenshots (as agreed), and the hidden `/hardware/` page.

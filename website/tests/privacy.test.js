@@ -26,7 +26,7 @@ test('date, controllers and contact are correct', () => {
 
 test('the policy is linked from the footer and from the waitlist', () => {
   assert.match(index, /<footer[\s\S]*href="\.\/privacy\/"[\s\S]*Privacy Policy/);
-  assert.match(modal, /href="\$\{PRIVACY_URL\}" target="_blank" rel="noopener">Read our Privacy Policy\./);
+  assert.match(modal, /href="\$\{PRIVACY_URL\}" target="_blank" rel="noopener"[^>]*>Read our Privacy Policy\./);
   assert.match(modal, /PRIVACY_URL = `\$\{import\.meta\.env\.BASE_URL\}privacy\/`/);
 });
 

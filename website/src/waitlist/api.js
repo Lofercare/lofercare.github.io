@@ -50,13 +50,14 @@ export async function joinWaitlist({ name, email }) {
 }
 
 /** Step 2 (optional). `interest` and `price` may be empty. */
-export async function updateWaitlist({ token, interest, price, consent }) {
+/** `consentVersion` names the wording the person saw when they ticked the box (English or Chinese). */
+export async function updateWaitlist({ token, interest, price, consent, consentVersion = CONSENT_VERSION }) {
   const result = await call('update_waitlist', {
     p_token: token,
     p_interest: interest || null,
     p_price: price || null,
     p_consent: Boolean(consent),
-    p_consent_version: CONSENT_VERSION,
+    p_consent_version: consentVersion,
   });
   if (!result?.ok) throw new WaitlistError('server');
 }

@@ -21,7 +21,7 @@ export const getLanguage = () => language;
 
 /** The text for `id` in the current language, or `english` if there isn't a translation. */
 export function t(id, english) {
-  return language === 'zh' && dictionary[id] ? dictionary[id] : english;
+  return language === 'zh' && dictionary[id] ? dictionary[id] : english;   // (an empty entry = not translated yet)
 }
 
 function detect() {
@@ -48,7 +48,7 @@ export function translateElement(el) {
   const id = el.dataset.i18n;
   if (id !== undefined) {
     if (memory.text === undefined) memory.text = el.innerHTML;   // keep the English the first time
-    const zh = language === 'zh' ? dictionary[id] : undefined;
+    const zh = (language === 'zh' && dictionary[id]) || undefined;
     if (zh === undefined) { if (el.innerHTML !== memory.text) el.innerHTML = memory.text; }
     else if (zh.includes('<')) el.innerHTML = zh;                // only our own <br /> lives in the dictionary
     else el.textContent = zh;
@@ -57,7 +57,7 @@ export function translateElement(el) {
     const key = el.getAttribute(`data-i18n-${name}`);
     if (key === null) continue;
     if (!(name in memory.attrs)) memory.attrs[name] = el.getAttribute(name) ?? '';
-    const zh = language === 'zh' ? dictionary[key] : undefined;
+    const zh = (language === 'zh' && dictionary[key]) || undefined;
     el.setAttribute(name, zh ?? memory.attrs[name]);
   }
 }

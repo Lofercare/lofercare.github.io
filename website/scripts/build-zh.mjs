@@ -39,11 +39,12 @@ const [ID, EN, ZH] = [col('ID'), col('English'), col('Chinese')];
 
 const zh = {};
 const problems = [];
+const untranslated = [];
 for (const r of rows) {
   if (!r[ID]) continue;
   const value = (r[ZH] ?? '').trim();
-  if (!value) { problems.push(`${r[ID]}: no Chinese yet (${r[EN].slice(0, 40)})`); continue; }
-  zh[r[ID]] = value;
+  zh[r[ID]] = value;                      // an empty entry means "not translated yet": the site shows the English
+  if (!value) untranslated.push(`${r[ID]}: ${r[EN].slice(0, 70)}`);
 }
 
 // ── Rows split into pieces (they hold a link, bold text or several lines on the page) ──
@@ -69,4 +70,5 @@ zh['x-email-empty'] = '请输入你的邮箱地址。';
 
 writeFileSync(OUT, JSON.stringify(zh, null, 1) + '\n');
 console.log(`wrote ${Object.keys(zh).length} entries to src/i18n/zh.json`);
+if (untranslated.length) console.log(`\n${untranslated.length} rows have no Chinese yet (the Chinese page shows English for these):\n  ` + untranslated.join('\n  '));
 if (problems.length) { console.error('\nProblems:\n  ' + problems.join('\n  ')); process.exit(1); }

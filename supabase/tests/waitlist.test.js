@@ -3,13 +3,16 @@
 // publishable key uses. Run: npm test
 import { test, before, beforeEach } from 'node:test';
 import assert from 'node:assert/strict';
-import { readFileSync, mkdtempSync, rmSync } from 'node:fs';
+import { readFileSync, readdirSync, mkdtempSync, rmSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { PGlite } from '@electric-sql/pglite';
-import { CONSENT_VERSION, CONSENT_WORDING, INTERESTS, PRICE_RANGES } from '../../website/src/waitlist/config.js';
+import { CONSENT_VERSION, CONSENT_WORDING, CONSENT_VERSION_ZH, CONSENT_WORDING_ZH, INTERESTS, PRICE_RANGES } from '../../website/src/waitlist/config.js';
 
-const MIGRATION = readFileSync(new URL('../migrations/20261010000000_waitlist.sql', import.meta.url), 'utf8');
+// Every migration, in order, exactly as they would be run in the Supabase SQL editor.
+const MIGRATIONS_DIR = new URL('../migrations/', import.meta.url);
+const MIGRATION = readdirSync(MIGRATIONS_DIR).filter((f) => f.endsWith('.sql')).sort()
+  .map((f) => readFileSync(new URL(f, MIGRATIONS_DIR), 'utf8')).join('\n');
 
 /** A fresh database with the migration applied and the two Supabase roles in place. */
 async function freshDb(dataDir) {
@@ -129,6 +132,17 @@ test('consent cannot be recorded against a wording version that does not exist',
 test('the wording and version in the website match what the database stores', async () => {
   const r = await db.query('select wording from public.waitlist_consent_texts where version = $1', [CONSENT_VERSION]);
   assert.equal(r.rows[0]?.wording, CONSENT_WORDING);
+});
+
+test('the Chinese consent wording matches too, and a Chinese sign-up records it', async () => {
+  const r = await db.query('select wording from public.waitlist_consent_texts where version = $1', [CONSENT_VERSION_ZH]);
+  assert.equal(r.rows[0]?.wording, CONSENT_WORDING_ZH);
+  const { token } = await join_(db, '李雷', 'zh-yes@example.com');
+  await update_(db, token, null, null, true, CONSENT_VERSION_ZH);
+  const row = (await rows(db)).find((x) => x.email_normalised === 'zh-yes@example.com');
+  assert.equal(row.marketing_consent_version, CONSENT_VERSION_ZH);
+  assert.equal(row.marketing_consent_wording, CONSENT_WORDING_ZH);
+  assert.equal(row.name, '李雷');                         // Chinese names are stored as typed
 });
 
 test('every choice in the website is accepted, and anything else is refused', async () => {

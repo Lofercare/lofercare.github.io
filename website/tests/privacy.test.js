@@ -14,7 +14,7 @@ test('all 14 sections are present, in order', () => {
 });
 
 test('date, controllers and contact are correct', () => {
-  assert.match(html, /Last updated: 9 October 2026/);
+  assert.match(html, /Last updated: 12 October 2026/);
   assert.match(html, /Zuyi Gong and Leyi Jiang/);
   assert.match(html, /unincorporated project based in the United Kingdom/);
   assert.match(html, /Supabase/);
@@ -35,4 +35,20 @@ test('the marketing checkbox starts unticked and the privacy policy is not a con
   assert.doesNotMatch(checkbox, /checked/);
   assert.equal([...modal.matchAll(/type="checkbox"/g)].length, 1);
   assert.match(modal, /You can unsubscribe from marketing emails at any time\. Your waitlist registration won't be affected\./);
+});
+
+test('the policy matches what the system does today (12 October 2026)', () => {
+  assert.match(html, /Your interests \(optional\)/, 'the "What interests you most?" question is disclosed');
+  assert.match(html, /London \(United Kingdom\) region/, 'Supabase region (eu-west-2)');
+  assert.match(html, /Google \(Gmail\): Receiving and answering messages sent to our privacy email address/);
+  assert.match(html, /Delete each waitlist registration 12 months after the date you signed up/, 'matches purge_waitlist(12 months)');
+  assert.match(html, /scrambled \(hashed\) version of your email address/, 'the "do not email" record is disclosed');
+  assert.match(html, /does not use cookies/);
+  assert.doesNotMatch(html, /Brevo|email-preferences page/, 'nothing that is not in use yet');
+});
+
+test('no page loads fonts from Google', () => {
+  for (const page of ['../index.html', '../privacy/index.html', '../public/hardware/index.html']) {
+    assert.doesNotMatch(readFileSync(new URL(page, import.meta.url), 'utf8'), /fonts\.(googleapis|gstatic)\.com/, page);
+  }
 });

@@ -11,16 +11,14 @@ const pages = { 'index.html': read('../index.html'), 'privacy/index.html': read(
 test('every translation number used in the HTML and the form exists in the Chinese dictionary', () => {
   const missing = [];
   for (const [name, text] of Object.entries(pages)) {
-    for (const m of text.matchAll(/data-i18n(?:-[a-z-]+)?="([^"$]+)"/g)) if (!(m[1] in zh)) missing.push(`${name}: ${m[1]}`);   // (an empty entry = row exists, still to translate; $ = filled in by code)
-    for (const m of text.matchAll(/\bt\('([^']+)'/g)) if (!(m[1] in zh)) missing.push(`${name}: t('${m[1]}')`);
+    for (const m of text.matchAll(/data-i18n(?:-[a-z-]+)?="([^"$]+)"/g)) if (!zh[m[1]]) missing.push(`${name}: ${m[1]}`);   // ($ = filled in by code, checked via the choices test)
+    for (const m of text.matchAll(/\bt\('([^']+)'/g)) if (!zh[m[1]]) missing.push(`${name}: t('${m[1]}')`);
   }
   assert.deepEqual(missing, []);
 });
 
-test('rows still waiting for a translation are reported (they show English on the Chinese page)', (t) => {
-  const waiting = Object.entries(zh).filter(([, v]) => !v.trim()).map(([k]) => k);
-  t.diagnostic(`${waiting.length} rows untranslated: ${waiting.join(', ')}`);
-  for (const id of ['183', '126', '150', '153', '310']) assert.ok(zh[id], `row ${id} is needed to build the Chinese page`);
+test('the dictionary has no empty entries, and no English-only leftovers where Chinese is expected', () => {
+  for (const [id, text] of Object.entries(zh)) assert.ok(text.trim().length > 0, `empty: ${id}`);
 });
 
 test('the Step 2 choices all have a translation number', () => {

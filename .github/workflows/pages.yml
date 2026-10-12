@@ -28,6 +28,16 @@ jobs:
           cache-dependency-path: website/package-lock.json
       - run: npm ci
         working-directory: website
+      - name: Check the waitlist settings are present
+        # Stops a deploy that would ship a waitlist with no database address (the form would say "not available").
+        env:
+          SUPABASE_URL: ${{ vars.SUPABASE_URL }}
+          SUPABASE_PUBLISHABLE_KEY: ${{ vars.SUPABASE_PUBLISHABLE_KEY }}
+        run: |
+          if [ -z "$SUPABASE_URL" ] || [ -z "$SUPABASE_PUBLISHABLE_KEY" ]; then
+            echo "::error::Missing repository variable(s). In GitHub: Settings > Secrets and variables > Actions > Variables tab, add SUPABASE_URL and SUPABASE_PUBLISHABLE_KEY (exact names, as Repository variables, not Secrets)."
+            exit 1
+          fi
       - run: npm test
         working-directory: website
       - run: npm run build

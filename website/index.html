@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lofer: Personal Muscle Care</title>
-    <meta
+    <title data-i18n="001">Lofer: Personal Muscle Care</title>
+    <meta data-i18n-content="002"
       name="description"
       content="Lofer, in development, is an AI-powered smart wearable for personalised muscle care. Describe what you feel, and it suggests which area of your body needs the most care and which setting to use, then delivers heat, micro-current stimulation and deep-vibration massage."
     />
@@ -23,18 +23,22 @@
   <body>
     <!-- ───────────── Navigation ───────────── -->
     <header class="nav">
-      <a class="nav__brand" href="#top" aria-label="Lofer home">
+      <a data-i18n-aria-label="128" class="nav__brand" href="#top" aria-label="Lofer home">
         <span class="nav__mark" data-logo-mark></span>
         <span class="wordmark">Lofer</span>
       </a>
-      <nav class="nav__links" aria-label="Main">
-        <a href="#why">Why Lofer</a>
-        <a href="#checks">The Lofer App</a>
-        <a href="#loop">The Lofer Loop</a>
-        <a href="#tile">The Lofer Tile</a>
-        <a href="#device">Inside Lofer</a>
+      <nav data-i18n-aria-label="129" class="nav__links" aria-label="Main">
+        <a data-i18n="004" href="#why">Why Lofer</a>
+        <a data-i18n="005" href="#checks">The Lofer App</a>
+        <a data-i18n="006" href="#loop">The Lofer Loop</a>
+        <a data-i18n="007" href="#tile">The Lofer Tile</a>
+        <a data-i18n="008" href="#device">Inside Lofer</a>
       </nav>
-      <a class="button button--small" href="#waitlist" data-waitlist-open>Get early access</a>
+      <div class="lang" role="group" aria-label="Language" data-i18n-aria-label="x-lang">
+        <button class="lang__btn" type="button" data-lang="en" lang="en">EN</button>
+        <button class="lang__btn" type="button" data-lang="zh" lang="zh-CN">中文</button>
+      </div>
+      <a data-i18n="009" class="button button--small" href="#waitlist" data-waitlist-open>Get early access</a>
     </header>
 
     <main id="top">
@@ -45,16 +49,16 @@
 
         <div class="hero__footer">
           <div class="hero__headline">
-            <p class="status-pill">In development</p>
-            <h1 class="hero__title" id="hero-title">Know what to do when your muscles feel tight or sore, any time of day.</h1>
+            <p data-i18n="010" class="status-pill">In development</p>
+            <h1 data-i18n="011" class="hero__title" id="hero-title">Know what to do when your muscles feel tight or sore, any time of day.</h1>
           </div>
           <div class="hero__side">
-            <p class="hero__lede">
+            <p data-i18n="012" class="hero__lede">
               Lofer is an AI-powered smart wearable for personalised muscle care. Describe what you feel, and it suggests
               where in your body needs the most care and design customised programme. It then delivers heat, micro-current
               stimulation and deep-vibration massage, and asks how you feel afterwards.
             </p>
-            <a class="button" href="#waitlist" data-waitlist-open>Join the waitlist</a>
+            <a data-i18n="013" class="button" href="#waitlist" data-waitlist-open>Join the waitlist</a>
           </div>
         </div>
       </section>
@@ -62,15 +66,15 @@
       <!-- ───────────── Mission: the best of both ───────────── -->
       <section class="section gap" id="why" data-tiling="why" aria-labelledby="gap-title">
         <div class="section__head section__head--wide reveal">
-          <p class="eyebrow">Our mission</p>
-          <h2 class="section__title" id="gap-title">Everyday aches shouldn't leave you guessing.</h2>
+          <p data-i18n="014" class="eyebrow">Our mission</p>
+          <h2 data-i18n="015" class="section__title" id="gap-title">Everyday aches shouldn't leave you guessing.</h2>
           <div class="section__lede section__lede--wide">
-            <p>
+            <p data-i18n="016">
               A physiotherapist can tell you where a problem is likely coming from and how to ease it, but that takes
               an appointment, time and money. Home wellness devices like massage guns and heat pads are always to hand, but
               they leave every decision to you: where to apply it, which setting to use, for how long, and when to stop.
             </p>
-            <p>
+            <p data-i18n="017">
               Lofer brings together the best of both. It listens to how you describe your symptoms, asks a few follow-up
               questions, and suggests which area of your body needs the most care and which session to run. Then it
               delivers the session itself, with built-in safety controls, and asks how it went. When something sounds like
@@ -79,32 +83,32 @@
           </div>
         </div>
 
-        <h3 class="gap__subtitle reveal">The best of both, at home.</h3>
+        <h3 data-i18n="018" class="gap__subtitle reveal">The best of both, at home.</h3>
 
         <!-- Two familiar options stacked on the left (what they do well ✓, what they can't ✕),
              an arrow, then Lofer on the right. The left column stretches to the Lofer card's height. -->
         <div class="gap__layout">
           <div class="gap__options">
             <article class="gap__option reveal">
-              <h4>Professional care</h4>
-              <p class="gap__kind">Physiotherapy and similar</p>
+              <h4 data-i18n="019">Professional care</h4>
+              <p data-i18n="020" class="gap__kind">Physiotherapy and similar</p>
               <ul class="checklist">
-                <li class="is-yes">Expert, hands-on assessment</li>
-                <li class="is-yes">A plan made for you</li>
-                <li class="is-no">Costly, session after session</li>
-                <li class="is-no">Booking, travel and waiting</li>
-                <li class="is-no">Not there when it flares up at home</li>
+                <li data-i18n="021" class="is-yes">Expert, hands-on assessment</li>
+                <li data-i18n="022" class="is-yes">A plan made for you</li>
+                <li data-i18n="023" class="is-no">Costly, session after session</li>
+                <li data-i18n="024" class="is-no">Booking, travel and waiting</li>
+                <li data-i18n="025" class="is-no">Not there when it flares up at home</li>
               </ul>
             </article>
             <article class="gap__option reveal">
-              <h4>Home wellness devices</h4>
-              <p class="gap__kind">Massage guns, heat pads, rollers</p>
+              <h4 data-i18n="026">Home wellness devices</h4>
+              <p data-i18n="027" class="gap__kind">Massage guns, heat pads, rollers</p>
               <ul class="checklist">
-                <li class="is-yes">Affordable and always at home</li>
-                <li class="is-yes">Quick to use, whenever you like</li>
-                <li class="is-no">Can't tell you which area needs the most care, or why</li>
-                <li class="is-no">No guidance on setting or how long</li>
-                <li class="is-no">Can't tell if it's helping, or when to stop</li>
+                <li data-i18n="028" class="is-yes">Affordable and always at home</li>
+                <li data-i18n="029" class="is-yes">Quick to use, whenever you like</li>
+                <li data-i18n="030" class="is-no">Can't tell you which area needs the most care, or why</li>
+                <li data-i18n="031" class="is-no">No guidance on setting or how long</li>
+                <li data-i18n="032" class="is-no">Can't tell if it's helping, or when to stop</li>
               </ul>
             </article>
           </div>
@@ -113,21 +117,21 @@
             <span class="gap__arrow">
               <svg viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6" /></svg>
             </span>
-            <span class="gap__bridge-label">Best<br />of both</span>
+            <span class="gap__bridge-label" data-i18n="033">Best<br />of both</span>
           </div>
 
           <article class="gap__lofer reveal">
             <span class="gap__glow" aria-hidden="true"></span>
             <span class="gap__mark" data-logo-mark></span>
             <h4><span class="wordmark">Lofer</span></h4>
-            <p class="gap__lofer-lede">Guidance like a professional's, as close to hand as a home device.</p>
+            <p data-i18n="035" class="gap__lofer-lede">Guidance like a professional's, as close to hand as a home device.</p>
             <ul class="checklist checklist--lofer">
-              <li class="is-yes">Listens to your symptoms and asks follow-up questions</li>
-              <li class="is-yes">Suggests where needs the most care, and design a session for you</li>
-              <li class="is-yes">Heat, micro-current and vibration from one wearable</li>
-              <li class="is-yes">At home, whenever it aches</li>
-              <li class="is-yes">Checks in before and after every session, with built-in safety controls</li>
-              <li class="is-yes">Suggests seeing a professional when your answers call for it</li>
+              <li data-i18n="036" class="is-yes">Listens to your symptoms and asks follow-up questions</li>
+              <li data-i18n="037" class="is-yes">Suggests where needs the most care, and design a session for you</li>
+              <li data-i18n="038" class="is-yes">Heat, micro-current and vibration from one wearable</li>
+              <li data-i18n="039" class="is-yes">At home, whenever it aches</li>
+              <li data-i18n="040" class="is-yes">Checks in before and after every session, with built-in safety controls</li>
+              <li data-i18n="041" class="is-yes">Suggests seeing a professional when your answers call for it</li>
             </ul>
           </article>
         </div>
@@ -136,9 +140,9 @@
       <!-- ───────────── Guided checks: real app screens ───────────── -->
       <section class="section" id="checks" data-tiling="checks" aria-labelledby="checks-title">
         <div class="section__head section__head--wide reveal">
-          <p class="eyebrow">The Lofer App</p>
-          <h2 class="section__title" id="checks-title">It starts with how you feel.</h2>
-          <p class="section__lede">
+          <p data-i18n="042" class="eyebrow">The Lofer App</p>
+          <h2 data-i18n="043" class="section__title" id="checks-title">It starts with how you feel.</h2>
+          <p data-i18n="044" class="section__lede">
             You describe what you feel. Lofer asks follow-up questions that refine what happens next, and guides a
             simple movement check before suggesting a session. Some answers lead to a session. Others suggest you pause
             and speak to a professional.
@@ -149,36 +153,36 @@
         <figure class="screens">
           <ol class="screens__list">
             <li class="screen reveal">
-              <img src="/app/1-question.jpg" width="600" height="1305" loading="lazy" alt="Lofer asks: Does anything bring it on? For example lifting or rotating your arm. Quick answers appear below." />
-              <h3>Asks about your symptoms</h3>
-              <p>One question at a time, with quick answers to tap.</p>
+              <img data-i18n-alt="130" src="/app/1-question.jpg" width="600" height="1305" loading="lazy" alt="Lofer asks: Does anything bring it on? For example lifting or rotating your arm. Quick answers appear below." />
+              <h3 data-i18n="045">Asks about your symptoms</h3>
+              <p data-i18n="046">One question at a time, with quick answers to tap.</p>
             </li>
             <li class="screen reveal">
-              <img src="/app/2-where.jpg" width="600" height="1305" loading="lazy" alt="A 3D body zoomed to the right shoulder, with the back of the shoulder highlighted and arrows to move the spot." />
-              <h3>Pinpoints the area</h3>
-              <p>Tap the body, or just say “more towards the back”.</p>
+              <img data-i18n-alt="131" src="/app/2-where.jpg" width="600" height="1305" loading="lazy" alt="A 3D body zoomed to the right shoulder, with the back of the shoulder highlighted and arrows to move the spot." />
+              <h3 data-i18n="047">Pinpoints the area</h3>
+              <p data-i18n="048">Tap the body, or just say “more towards the back”.</p>
             </li>
             <li class="screen reveal">
-              <img src="/app/3-movement-check.jpg" width="600" height="1305" loading="lazy" alt="The Arm raise movement check: an animated figure raises its arm, with four answers from Feels fine to Can't do it comfortably." />
-              <h3>Checks a movement</h3>
-              <p>A guided movement before the session, and again after.</p>
+              <img data-i18n-alt="132" src="/app/3-movement-check.jpg" width="600" height="1305" loading="lazy" alt="The Arm raise movement check: an animated figure raises its arm, with four answers from Feels fine to Can't do it comfortably." />
+              <h3 data-i18n="049">Checks a movement</h3>
+              <p data-i18n="050">A guided movement before the session, and again after.</p>
             </li>
             <li class="screen reveal">
-              <img src="/app/4-suggested-care.jpg" width="600" height="1305" loading="lazy" alt="Suggested care: Targeted shoulder relief, 15 minutes, moderate, with warmth, with Customise and Start session buttons." />
-              <h3>Suggests a session</h3>
-              <p>Shaped by your answers, with built-in safety controls.</p>
+              <img data-i18n-alt="133" src="/app/4-suggested-care.jpg" width="600" height="1305" loading="lazy" alt="Suggested care: Targeted shoulder relief, 15 minutes, moderate, with warmth, with Customise and Start session buttons." />
+              <h3 data-i18n="051">Suggests a session</h3>
+              <p data-i18n="052">Shaped by your answers, with built-in safety controls.</p>
             </li>
           </ol>
-          <figcaption class="screens__caption">Screens from the current iOS app prototype.</figcaption>
+          <figcaption data-i18n="053" class="screens__caption">Screens from the current iOS app prototype.</figcaption>
         </figure>
       </section>
 
       <!-- ───────────── The Lofer Loop (six stages) ───────────── -->
       <section class="section loop" id="loop" data-tiling="loop" aria-labelledby="loop-title">
         <div class="section__head reveal">
-          <p class="eyebrow">The Lofer Loop</p>
-          <h2 class="section__title" id="loop-title">Six steps, one connected process.</h2>
-          <p class="section__lede">
+          <p data-i18n="054" class="eyebrow">The Lofer Loop</p>
+          <h2 data-i18n="055" class="section__title" id="loop-title">Six steps, one connected process.</h2>
+          <p data-i18n="056" class="section__lede">
             Each step feeds the next, so a session begins with information, and what happens afterwards counts.
           </p>
         </div>
@@ -205,44 +209,44 @@
               d="M300,100 A200,200 0 1,1 300,500 A200,200 0 1,1 300,100"
             />
             <!-- Six stages, 60° apart, clockwise from the top. -->
-            <g class="loop__node" data-loop-node transform="translate(300 100)"><circle r="9" /><text y="-26" text-anchor="middle">Listen</text></g>
-            <g class="loop__node" data-loop-node transform="translate(473 200)"><circle r="9" /><text x="22" y="-8" text-anchor="start">Consider</text></g>
-            <g class="loop__node" data-loop-node transform="translate(473 400)"><circle r="9" /><text x="22" y="22" text-anchor="start">Check</text></g>
-            <g class="loop__node" data-loop-node transform="translate(300 500)"><circle r="9" /><text y="44" text-anchor="middle">Act</text></g>
-            <g class="loop__node" data-loop-node transform="translate(127 400)"><circle r="9" /><text x="-22" y="22" text-anchor="end">Reassess</text></g>
-            <g class="loop__node" data-loop-node transform="translate(127 200)"><circle r="9" /><text x="-22" y="-8" text-anchor="end">Learn</text></g>
+            <g class="loop__node" data-loop-node transform="translate(300 100)"><circle r="9" /><text data-i18n="057" y="-26" text-anchor="middle">Listen</text></g>
+            <g class="loop__node" data-loop-node transform="translate(473 200)"><circle r="9" /><text data-i18n="058" x="22" y="-8" text-anchor="start">Consider</text></g>
+            <g class="loop__node" data-loop-node transform="translate(473 400)"><circle r="9" /><text data-i18n="059" x="22" y="22" text-anchor="start">Check</text></g>
+            <g class="loop__node" data-loop-node transform="translate(300 500)"><circle r="9" /><text data-i18n="060" y="44" text-anchor="middle">Act</text></g>
+            <g class="loop__node" data-loop-node transform="translate(127 400)"><circle r="9" /><text data-i18n="061" x="-22" y="22" text-anchor="end">Reassess</text></g>
+            <g class="loop__node" data-loop-node transform="translate(127 200)"><circle r="9" /><text data-i18n="062" x="-22" y="-8" text-anchor="end">Learn</text></g>
             <g data-loop-dot>
               <circle class="loop__dot-glow" r="16" filter="url(#loop-glow)" />
               <circle class="loop__dot" r="6" />
             </g>
-            <text class="loop__center" x="300" y="292">Each step</text>
-            <text class="loop__center" x="300" y="328">informs the next</text>
+            <text data-i18n="063" class="loop__center" x="300" y="292">Each step</text>
+            <text data-i18n="064" class="loop__center" x="300" y="328">informs the next</text>
           </svg>
 
           <ol class="loop__stages">
             <li class="loop__stage" data-loop-stage>
               <span class="loop__number">01</span>
-              <div><h3>Listen</h3><p>Capture what you're feeling and the context around it.</p></div>
+              <div><h3 data-i18n="065">Listen</h3><p data-i18n="066">Capture what you're feeling and the context around it.</p></div>
             </li>
             <li class="loop__stage" data-loop-stage>
               <span class="loop__number">02</span>
-              <div><h3>Consider</h3><p>Work out what still needs clarifying.</p></div>
+              <div><h3 data-i18n="067">Consider</h3><p data-i18n="068">Work out what still needs clarifying.</p></div>
             </li>
             <li class="loop__stage" data-loop-stage>
               <span class="loop__number">03</span>
-              <div><h3>Check</h3><p>Ask or test only what changes the next decision.</p></div>
+              <div><h3 data-i18n="069">Check</h3><p data-i18n="070">Ask or test only what changes the next decision.</p></div>
             </li>
             <li class="loop__stage" data-loop-stage>
               <span class="loop__number">04</span>
-              <div><h3>Act</h3><p>Deliver the selected care, when care is the right next step.</p></div>
+              <div><h3 data-i18n="071">Act</h3><p data-i18n="072">Deliver the selected care, when care is the right next step.</p></div>
             </li>
             <li class="loop__stage" data-loop-stage>
               <span class="loop__number">05</span>
-              <div><h3>Reassess</h3><p>Compare how it feels, and the same movement, before and after.</p></div>
+              <div><h3 data-i18n="073">Reassess</h3><p data-i18n="074">Compare how it feels, and the same movement, before and after.</p></div>
             </li>
             <li class="loop__stage" data-loop-stage>
               <span class="loop__number">06</span>
-              <div><h3>Learn</h3><p>Keep the record, so it informs the next decision.</p></div>
+              <div><h3 data-i18n="075">Learn</h3><p data-i18n="076">Keep the record, so it informs the next decision.</p></div>
             </li>
           </ol>
         </div>
@@ -252,38 +256,38 @@
       <!-- ───────────── The Lofer tile: what it does, and what it's like up close ───────────── -->
       <section class="section tile" id="tile" data-tiling="loop" aria-labelledby="tile-title">
         <div class="section__head section__head--wide reveal">
-          <p class="eyebrow">The Lofer tile</p>
-          <h2 class="section__title" id="tile-title">One small tile, four functions.</h2>
+          <p data-i18n="077" class="eyebrow">The Lofer tile</p>
+          <h2 data-i18n="078" class="section__title" id="tile-title">One small tile, four functions.</h2>
         </div>
 
         <!-- What each tile can do. Micro-current is planned, so it says so. -->
         <ul class="modes">
-          <li class="mode reveal"><span class="mode__glow mode__glow--heat"></span><img class="mode__img" src="/renders/function-heat.webp" width="800" height="533" loading="lazy" alt="A Lofer tile on an arm, with warm lines rising and a soft glow in the skin around it." /><h3>Heat</h3><p>Gentle warmth to ease daily tension and help muscles relax.</p></li>
-          <li class="mode reveal"><span class="mode__glow mode__glow--vibration"></span><img class="mode__img" src="/renders/function-vibration.webp" width="800" height="533" loading="lazy" alt="A Lofer tile on an arm, with rings of vibration spreading through the skin around it." /><h3>Vibration massage</h3><p>From a soft hum to a deeper pulse, to soothe everyday tightness.</p></li>
-          <li class="mode reveal"><span class="mode__glow mode__glow--ems"></span><img class="mode__img" src="/renders/function-microcurrent.webp" width="800" height="533" loading="lazy" alt="A Lofer tile on an arm, with faint blue lines of micro-current running along the skin." /><h3>Micro-current</h3><p>Micro pulses that help muscles release and unwind.</p></li>
-          <li class="mode reveal"><span class="mode__glow mode__glow--compression"></span><img class="mode__img" src="/renders/function-emg.webp" width="800" height="533" loading="lazy" alt="A Lofer tile on an arm, with a muscle-signal trace above it and pale lines along the skin." /><h3>Muscle signals</h3><p>Designed to read muscle response, so care can meet you where you are.</p></li>
+          <li class="mode reveal"><span class="mode__glow mode__glow--heat"></span><img data-i18n-alt="134" class="mode__img" src="/renders/function-heat.webp" width="800" height="533" loading="lazy" alt="A Lofer tile on an arm, with warm lines rising and a soft glow in the skin around it." /><h3 data-i18n="079">Heat</h3><p data-i18n="080">Gentle warmth to ease daily tension and help muscles relax.</p></li>
+          <li class="mode reveal"><span class="mode__glow mode__glow--vibration"></span><img data-i18n-alt="135" class="mode__img" src="/renders/function-vibration.webp" width="800" height="533" loading="lazy" alt="A Lofer tile on an arm, with rings of vibration spreading through the skin around it." /><h3 data-i18n="081">Vibration massage</h3><p data-i18n="082">From a soft hum to a deeper pulse, to soothe everyday tightness.</p></li>
+          <li class="mode reveal"><span class="mode__glow mode__glow--ems"></span><img data-i18n-alt="136" class="mode__img" src="/renders/function-microcurrent.webp" width="800" height="533" loading="lazy" alt="A Lofer tile on an arm, with faint blue lines of micro-current running along the skin." /><h3 data-i18n="083">Micro-current</h3><p data-i18n="084">Micro pulses that help muscles release and unwind.</p></li>
+          <li class="mode reveal"><span class="mode__glow mode__glow--compression"></span><img data-i18n-alt="137" class="mode__img" src="/renders/function-emg.webp" width="800" height="533" loading="lazy" alt="A Lofer tile on an arm, with a muscle-signal trace above it and pale lines along the skin." /><h3 data-i18n="085">Muscle signals</h3><p data-i18n="086">Designed to read muscle response, so care can meet you where you are.</p></li>
         </ul>
 
         <!-- The tile up close: four renders. -->
         <ul class="gallery">
           <li class="gallery__card reveal">
-            <img src="/renders/colourways.webp" width="1400" height="933" loading="lazy" alt="Five Lofer tiles in a curved row, in different colours." />
-            <h3>Soft to the touch</h3>
+            <img data-i18n-alt="138" src="/renders/colourways.webp" width="1400" height="933" loading="lazy" alt="Five Lofer tiles in a curved row, in different colours." />
+            <h3 data-i18n="087">Soft to the touch</h3>
             <p></p>
           </li>
           <li class="gallery__card reveal">
-            <img src="/renders/skin-side.webp" width="1200" height="800" loading="lazy" alt="The underside of a Lofer tile, with a hydrogel liner and two grey electrodes, next to the top of another tile." />
-            <h3>A gentle skin side</h3>
+            <img data-i18n-alt="139" src="/renders/skin-side.webp" width="1200" height="800" loading="lazy" alt="The underside of a Lofer tile, with a hydrogel liner and two grey electrodes, next to the top of another tile." />
+            <h3 data-i18n="088">A gentle skin side</h3>
             <p></p>
           </li>
           <li class="gallery__card reveal">
-            <img src="/renders/hero-latched.webp" width="1400" height="933" loading="lazy" alt="Three cream Lofer tiles latched edge to edge." />
-            <h3>Latches edge to edge</h3>
+            <img data-i18n-alt="140" src="/renders/hero-latched.webp" width="1400" height="933" loading="lazy" alt="Three cream Lofer tiles latched edge to edge." />
+            <h3 data-i18n="089">Latches edge to edge</h3>
             <p></p>
           </li>
           <li class="gallery__card reveal">
-            <img src="/renders/dock.webp" width="1400" height="933" loading="lazy" alt="Three Lofer tiles standing in a charging dock with a USB-C cable." />
-            <h3>One cable charges four</h3>
+            <img data-i18n-alt="141" src="/renders/dock.webp" width="1400" height="933" loading="lazy" alt="Three Lofer tiles standing in a charging dock with a USB-C cable." />
+            <h3 data-i18n="090">One cable charges four</h3>
             <p></p>
           </li>
         </ul>
@@ -292,9 +296,9 @@
       <!-- ───────────── Personalisation ───────────── -->
       <section class="section split" id="history" data-tiling="history" aria-labelledby="history-title">
         <div class="section__head reveal">
-          <p class="eyebrow">Personal</p>
-          <h2 class="section__title" id="history-title">Your next session starts with a history.</h2>
-          <p class="section__lede">
+          <p data-i18n="091" class="eyebrow">Personal</p>
+          <h2 data-i18n="092" class="section__title" id="history-title">Your next session starts with a history.</h2>
+          <p data-i18n="093" class="section__lede">
             Lofer keeps a record of what you reported, what was checked, which session you ran and how it felt afterwards.
             The next time something aches, it starts from that record, not from scratch. You can also share a summary
             with a professional.
@@ -304,14 +308,14 @@
         <!-- An example of one entry in the record (illustrative). -->
         <figure class="record reveal">
           <figcaption class="record__head">
-            <span class="record__title">Shoulder, after tennis</span>
-            <span class="record__tag">Example record</span>
+            <span data-i18n="094" class="record__title">Shoulder, after tennis</span>
+            <span data-i18n="095" class="record__tag">Example record</span>
           </figcaption>
           <dl class="record__rows">
-            <div><dt>Reported</dt><dd>Tight when lifting the arm overhead</dd></div>
-            <div><dt>Checked</dt><dd>Arm raise: pulling about halfway</dd></div>
-            <div><dt>Session</dt><dd>Gentle session · heat, micro-current and vibration massage · 10 min</dd></div>
-            <div><dt>Result</dt><dd>“A little better.” Arm raise felt fine.</dd></div>
+            <div><dt data-i18n="096">Reported</dt><dd data-i18n="097">Tight when lifting the arm overhead</dd></div>
+            <div><dt data-i18n="098">Checked</dt><dd data-i18n="099">Arm raise: pulling about halfway</dd></div>
+            <div><dt data-i18n="100">Session</dt><dd data-i18n="101">Gentle session · heat, micro-current and vibration massage · 10 min</dd></div>
+            <div><dt data-i18n="102">Result</dt><dd data-i18n="103">“A little better.” Arm raise felt fine.</dd></div>
           </dl>
         </figure>
       </section>
@@ -319,9 +323,9 @@
       <!-- ───────────── Inside Lofer: the real tile, layer by layer ───────────── -->
       <section class="section build" id="device" data-tiling="device" aria-labelledby="device-title">
         <div class="section__head section__head--wide reveal">
-          <p class="eyebrow">Inside Lofer</p>
-          <h2 class="section__title" id="device-title">Built to sense and act.</h2>
-          <p class="section__lede">
+          <p data-i18n="104" class="eyebrow">Inside Lofer</p>
+          <h2 data-i18n="105" class="section__title" id="device-title">Built to sense and act.</h2>
+          <p data-i18n="106" class="section__lede">
             Each Lofer tile is a soft silicone pad, designed at 56 × 53.5 mm and 6.2 mm thick. Scroll to look through its
             layers.
           </p>
@@ -333,7 +337,7 @@
           <div class="build__sticky">
             <figure class="build__figure">
               <div class="build__pic">
-              <img src="/renders/exploded.webp" width="1000" height="1308" alt="Exploded view of one Lofer tile: silicone cover, battery, circuit board, insulating foam, rigid chassis, heater film and hydrogel liner." />
+              <img data-i18n-alt="142" src="/renders/exploded.webp" width="1000" height="1308" alt="Exploded view of one Lofer tile: silicone cover, battery, circuit board, insulating foam, rigid chassis, heater film and hydrogel liner." />
               <span class="build__marker" data-build-marker style="--x:71.8%;--y:10.4%">1</span>
               <span class="build__marker" data-build-marker style="--x:58.4%;--y:29.2%">2</span>
               <span class="build__marker" data-build-marker style="--x:67.9%;--y:38.7%">3</span>
@@ -346,54 +350,54 @@
             <ol class="build__labels">
               <li data-build-label>
                 <span class="build__num">01</span>
-                <div><h3>Silicone cover</h3><p>Soft-touch with multiple color options</p></div>
+                <div><h3 data-i18n="107">Silicone cover</h3><p data-i18n="108">Soft-touch with multiple color options</p></div>
               </li>
               <li data-build-label>
                 <span class="build__num">02</span>
-                <div><h3>Battery</h3><p>20 × 30 × 4 mm LiPo.</p></div>
+                <div><h3 data-i18n="109">Battery</h3><p data-i18n="110">20 × 30 × 4 mm LiPo.</p></div>
               </li>
               <li data-build-label>
                 <span class="build__num">03</span>
-                <div><h3>Custom circuit board</h3><p>ESP32-S3, drivers and an EMG front end.</p></div>
+                <div><h3 data-i18n="111">Custom circuit board</h3><p data-i18n="112">ESP32-S3, drivers and an EMG front end.</p></div>
               </li>
               <li data-build-label>
                 <span class="build__num">04</span>
-                <div><h3>Insulating foam</h3><p>Keeps the heater's heat away from the battery.</p></div>
+                <div><h3 data-i18n="113">Insulating foam</h3><p data-i18n="114">Keeps the heater's heat away from the battery.</p></div>
               </li>
               <li data-build-label>
                 <span class="build__num">05</span>
-                <div><h3>Rigid chassis</h3><p>Edge magnets, vibration motor and thermal cut-off.</p></div>
+                <div><h3 data-i18n="115">Rigid chassis</h3><p data-i18n="116">Edge magnets, vibration motor and thermal cut-off.</p></div>
               </li>
               <li data-build-label>
                 <span class="build__num">06</span>
-                <div><h3>Heater film</h3><p>20 × 30 mm.</p></div>
+                <div><h3 data-i18n="117">Heater film</h3><p data-i18n="118">20 × 30 mm.</p></div>
               </li>
               <li data-build-label>
                 <span class="build__num">07</span>
-                <div><h3>Hydrogel liner</h3><p>With two built-in EMG electrodes, against your skin.</p></div>
+                <div><h3 data-i18n="119">Hydrogel liner</h3><p data-i18n="120">With two built-in EMG electrodes, against your skin.</p></div>
               </li>
             </ol>
           </div>
         </div>
 
 
-        <p class="build__note">The hardware is in prototype, and these schematics are a work in progress.</p>
+        <p data-i18n="121" class="build__note">The hardware is in prototype, and these schematics are a work in progress.</p>
       </section>
 
       <!-- ───────────── Waitlist: the button opens the two-step form (src/waitlist/) ───────────── -->
       <section class="waitlist" id="waitlist" data-tiling="waitlist" aria-labelledby="waitlist-title">
-        <p class="tagline reveal">Move · Recover · Live better</p>
-        <h2 class="waitlist__title reveal" id="waitlist-title">Be among the first to try Lofer.</h2>
+        <p data-i18n="122" class="tagline reveal">Move · Recover · Live better</p>
+        <h2 data-i18n="123" class="waitlist__title reveal" id="waitlist-title">Be among the first to try Lofer.</h2>
         <div class="waitlist__closed reveal">
-          <button class="button" type="button" data-waitlist-open>Join the waitlist</button>
+          <button data-i18n="124" class="button" type="button" data-waitlist-open>Join the waitlist</button>
         </div>
       </section>
     </main>
 
     <footer class="footer">
       <span class="wordmark footer__word">Lofer</span>
-      <p>Lofer is in development. © <span data-year></span> Lofer · <a href="./privacy/">Privacy Policy</a></p>
-      <p class="footer__disclaimer">
+      <p><span data-i18n="x-dev">Lofer is in development.</span> © <span data-year></span> Lofer · <a href="./privacy/" data-lang-link data-i18n="x-privacy">Privacy Policy</a></p>
+      <p data-i18n="127" class="footer__disclaimer">
         Lofer is designed for general wellness, relaxation and muscle comfort.
         It is not a medical device, and it is not intended to diagnose, treat,
         cure or prevent any disease, medical condition or injury. If you are

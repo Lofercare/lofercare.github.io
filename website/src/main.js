@@ -6,6 +6,7 @@ import { startLoop } from './loop.js';
 import { startBuild } from './build.js';
 import { startTiling } from './tiling.js';
 import { initWaitlist } from './waitlist/modal.js';
+import { initI18n } from './i18n/i18n.js';
 
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -62,6 +63,9 @@ if (reducedMotion) {
   );
   revealItems.forEach((item) => observer.observe(item));
 }
+
+// ── Language (English / 中文) ──
+initI18n();
 
 // ── Waitlist ──
 // Every [data-waitlist-open] button opens the two-step form (src/waitlist/modal.js).

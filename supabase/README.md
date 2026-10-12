@@ -37,8 +37,8 @@ Everything else (reading, exporting, deleting)  ──►  you, in the Supabase 
 | File | What it does | Live project |
 |---|---|---|
 | `migrations/20261010000000_waitlist.sql` | The waitlist itself | Applied (checked 11 Oct 2026) |
-| `migrations/20261011000000_waitlist_withdrawals.sql` | Records marketing withdrawals (keeping the consent evidence) and adds the "do not email" list | **Not yet applied** |
-| `migrations/20261012000000_waitlist_email_links.sql` | Personal links in emails (unsubscribe / leave the waitlist), list exports for Brevo, current policy version on new sign-ups, link clean-up in `purge_waitlist` | **Not yet applied** |
+| `migrations/20261011000000_waitlist_withdrawals.sql` | Records marketing withdrawals (keeping the consent evidence) and adds the "do not email" list | Applied (12 Oct 2026) |
+| `migrations/20261012000000_waitlist_email_links.sql` | Personal links in emails (unsubscribe / leave the waitlist), list exports for Brevo, current policy version on new sign-ups, link clean-up in `purge_waitlist` | Applied (12 Oct 2026) |
 
 To apply one: **SQL Editor → New query**, paste the whole file, **Run**. It only adds things and
 changes one table rule; existing entries are kept (a test checks this).
